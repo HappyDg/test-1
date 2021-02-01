@@ -1,0 +1,17 @@
+#S32K14 Autosar 4.0 OS (QM) Evaluation License - SW32K14-OS401-RTM-1.0.0
+#b4.0.98 for Bùi V?n Hi?u Software Account
+# License for ANY
+INCREMENT AUTOSAROS_ORTI metrowks 2.0 29-apr-2021 uncounted \
+	0A4D6112F1A8 VENDOR_STRING="SW32K14-OS401-RTM-1.0.0 b4.0.98" \
+	HOSTID=ANY ISSUER="Freescale Semiconductor" ISSUED=01-feb-2021 \
+	ck=93 SN="FSL - 33357617"
+# License for ANY
+INCREMENT AUTOSAROS_SG_S32K metrowks 4.0 29-apr-2021 uncounted \
+	DCB462CD2B39 VENDOR_STRING="SW32K14-OS401-RTM-1.0.0 b4.0.98" \
+	HOSTID=ANY ISSUER="Freescale Semiconductor" ISSUED=01-feb-2021 \
+	ck=139 SN="FSL - 33357617"
+# License for ANY
+INCREMENT AUTOSAROS_SOURCES_S32K metrowks 4.0 29-apr-2021 uncounted \
+	D5E5695E8891 VENDOR_STRING="SW32K14-OS401-RTM-1.0.0 b4.0.98" \
+	HOSTID=ANY ISSUER="Freescale Semiconductor" ISSUED=01-feb-2021 \
+	ck=156 SN="FSL - 33357617"

@@ -1,0 +1,1018 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_4-0-3.xsd">
+   <ADMIN-DATA>
+      <DOC-REVISIONS>
+         <DOC-REVISION>
+            <REVISION-LABEL>4.2.0</REVISION-LABEL>
+            <ISSUED-BY>AUTOSAR</ISSUED-BY>
+            <DATE>2011-11-09</DATE>
+         </DOC-REVISION>
+      </DOC-REVISIONS>
+   </ADMIN-DATA>
+   <AR-PACKAGES>
+      <AR-PACKAGE>
+         <SHORT-NAME>Os</SHORT-NAME>
+         <ELEMENTS>
+            <ECUC-MODULE-CONFIGURATION-VALUES>
+               <SHORT-NAME>Os</SHORT-NAME>
+               <DEFINITION-REF DEST="ECUC-MODULE-DEF">/TS_T40D2M4I0R98/Os</DEFINITION-REF>
+               <IMPLEMENTATION-CONFIG-VARIANT>VARIANT-PRE-COMPILE</IMPLEMENTATION-CONFIG-VARIANT>
+               <CONTAINERS>
+                  <ECUC-CONTAINER-VALUE>
+                     <SHORT-NAME>STOPALARM</SHORT-NAME>
+                     <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/TS_T40D2M4I0R98/Os/OsAlarm</DEFINITION-REF>
+                     <REFERENCE-VALUES>
+                        <ECUC-REFERENCE-VALUE>
+                           <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/TS_T40D2M4I0R98/Os/OsAlarm/OsAlarmAccessingApplication</DEFINITION-REF>
+                           <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/Os/Os/RCV_APP</VALUE-REF>
+                        </ECUC-REFERENCE-VALUE>
+                        <ECUC-REFERENCE-VALUE>
+                           <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/TS_T40D2M4I0R98/Os/OsAlarm/OsAlarmCounterRef</DEFINITION-REF>
+                           <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/Os/Os/STCOUNTER</VALUE-REF>
+                        </ECUC-REFERENCE-VALUE>
+                     </REFERENCE-VALUES>
+                     <SUB-CONTAINERS>
+                        <ECUC-CONTAINER-VALUE>
+                           <SHORT-NAME>OsAlarmAction</SHORT-NAME>
+                           <DEFINITION-REF DEST="ECUC-CHOICE-CONTAINER-DEF">/TS_T40D2M4I0R98/Os/OsAlarm/OsAlarmAction</DEFINITION-REF>
+                           <SUB-CONTAINERS>
+                              <ECUC-CONTAINER-VALUE>
+                                 <SHORT-NAME>OsAlarmActivateTask</SHORT-NAME>
+                                 <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/TS_T40D2M4I0R98/Os/OsAlarm/OsAlarmAction/OsAlarmActivateTask</DEFINITION-REF>
+                                 <REFERENCE-VALUES>
+                                    <ECUC-REFERENCE-VALUE>
+                                       <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/TS_T40D2M4I0R98/Os/OsAlarm/OsAlarmAction/OsAlarmActivateTask/OsAlarmActivateTaskRef</DEFINITION-REF>
+                                       <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/Os/Os/TASKSTOP</VALUE-REF>
+                                    </ECUC-REFERENCE-VALUE>
+                                 </REFERENCE-VALUES>
+                              </ECUC-CONTAINER-VALUE>
+                           </SUB-CONTAINERS>
+                        </ECUC-CONTAINER-VALUE>
+                     </SUB-CONTAINERS>
+                  </ECUC-CONTAINER-VALUE>
+                  <ECUC-CONTAINER-VALUE>
+                     <SHORT-NAME>TIMLIMITALARM</SHORT-NAME>
+                     <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/TS_T40D2M4I0R98/Os/OsAlarm</DEFINITION-REF>
+                     <REFERENCE-VALUES>
+                        <ECUC-REFERENCE-VALUE>
+                           <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/TS_T40D2M4I0R98/Os/OsAlarm/OsAlarmCounterRef</DEFINITION-REF>
+                           <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/Os/Os/SECONDTIMER</VALUE-REF>
+                        </ECUC-REFERENCE-VALUE>
+                     </REFERENCE-VALUES>
+                     <SUB-CONTAINERS>
+                        <ECUC-CONTAINER-VALUE>
+                           <SHORT-NAME>OsAlarmAction</SHORT-NAME>
+                           <DEFINITION-REF DEST="ECUC-CHOICE-CONTAINER-DEF">/TS_T40D2M4I0R98/Os/OsAlarm/OsAlarmAction</DEFINITION-REF>
+                           <SUB-CONTAINERS>
+                              <ECUC-CONTAINER-VALUE>
+                                 <SHORT-NAME>OsAlarmSetEvent</SHORT-NAME>
+                                 <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/TS_T40D2M4I0R98/Os/OsAlarm/OsAlarmAction/OsAlarmSetEvent</DEFINITION-REF>
+                                 <REFERENCE-VALUES>
+                                    <ECUC-REFERENCE-VALUE>
+                                       <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/TS_T40D2M4I0R98/Os/OsAlarm/OsAlarmAction/OsAlarmSetEvent/OsAlarmSetEventRef</DEFINITION-REF>
+                                       <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/Os/Os/TIMLIMITEVENT</VALUE-REF>
+                                    </ECUC-REFERENCE-VALUE>
+                                    <ECUC-REFERENCE-VALUE>
+                                       <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/TS_T40D2M4I0R98/Os/OsAlarm/OsAlarmAction/OsAlarmSetEvent/OsAlarmSetEventTaskRef</DEFINITION-REF>
+                                       <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/Os/Os/TASKRCV1</VALUE-REF>
+                                    </ECUC-REFERENCE-VALUE>
+                                 </REFERENCE-VALUES>
+                              </ECUC-CONTAINER-VALUE>
+                           </SUB-CONTAINERS>
+                        </ECUC-CONTAINER-VALUE>
+                     </SUB-CONTAINERS>
+                  </ECUC-CONTAINER-VALUE>
+                  <ECUC-CONTAINER-VALUE>
+                     <SHORT-NAME>Mode01</SHORT-NAME>
+                     <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/TS_T40D2M4I0R98/Os/OsAppMode</DEFINITION-REF>
+                  </ECUC-CONTAINER-VALUE>
+                  <ECUC-CONTAINER-VALUE>
+                     <SHORT-NAME>SND_APP</SHORT-NAME>
+                     <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/TS_T40D2M4I0R98/Os/OsApplication</DEFINITION-REF>
+                     <PARAMETER-VALUES>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                           <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/TS_T40D2M4I0R98/Os/OsApplication/OsApplicationCoreAssignment</DEFINITION-REF>
+                           <VALUE>0</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                           <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T40D2M4I0R98/Os/OsApplication/OsTrusted</DEFINITION-REF>
+                           <VALUE>1</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                     </PARAMETER-VALUES>
+                     <REFERENCE-VALUES>
+                        <ECUC-REFERENCE-VALUE>
+                           <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/TS_T40D2M4I0R98/Os/OsApplication/OsAppCounterRef</DEFINITION-REF>
+                           <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/Os/Os/SECONDTIMER</VALUE-REF>
+                        </ECUC-REFERENCE-VALUE>
+                        <ECUC-REFERENCE-VALUE>
+                           <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/TS_T40D2M4I0R98/Os/OsApplication/OsAppCounterRef</DEFINITION-REF>
+                           <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/Os/Os/SYSTEMTIMER</VALUE-REF>
+                        </ECUC-REFERENCE-VALUE>
+                        <ECUC-REFERENCE-VALUE>
+                           <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/TS_T40D2M4I0R98/Os/OsApplication/OsAppCounterRef</DEFINITION-REF>
+                           <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/Os/Os/STCOUNTER</VALUE-REF>
+                        </ECUC-REFERENCE-VALUE>
+                        <ECUC-REFERENCE-VALUE>
+                           <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/TS_T40D2M4I0R98/Os/OsApplication/OsAppScheduleTableRef</DEFINITION-REF>
+                           <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/Os/Os/SCHEDTAB</VALUE-REF>
+                        </ECUC-REFERENCE-VALUE>
+                        <ECUC-REFERENCE-VALUE>
+                           <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/TS_T40D2M4I0R98/Os/OsApplication/OsAppTaskRef</DEFINITION-REF>
+                           <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/Os/Os/TASKCNT</VALUE-REF>
+                        </ECUC-REFERENCE-VALUE>
+                        <ECUC-REFERENCE-VALUE>
+                           <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/TS_T40D2M4I0R98/Os/OsApplication/OsAppTaskRef</DEFINITION-REF>
+                           <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/Os/Os/TASKSND1</VALUE-REF>
+                        </ECUC-REFERENCE-VALUE>
+                        <ECUC-REFERENCE-VALUE>
+                           <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/TS_T40D2M4I0R98/Os/OsApplication/OsAppTaskRef</DEFINITION-REF>
+                           <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/Os/Os/TASKSND2</VALUE-REF>
+                        </ECUC-REFERENCE-VALUE>
+                     </REFERENCE-VALUES>
+                     <SUB-CONTAINERS>
+                        <ECUC-CONTAINER-VALUE>
+                           <SHORT-NAME>OsApplicationHooks</SHORT-NAME>
+                           <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/TS_T40D2M4I0R98/Os/OsApplication/OsApplicationHooks</DEFINITION-REF>
+                           <PARAMETER-VALUES>
+                              <ECUC-NUMERICAL-PARAM-VALUE>
+                                 <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T40D2M4I0R98/Os/OsApplication/OsApplicationHooks/OsAppErrorHook</DEFINITION-REF>
+                                 <VALUE>1</VALUE>
+                              </ECUC-NUMERICAL-PARAM-VALUE>
+                              <ECUC-NUMERICAL-PARAM-VALUE>
+                                 <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T40D2M4I0R98/Os/OsApplication/OsApplicationHooks/OsAppShutdownHook</DEFINITION-REF>
+                                 <VALUE>0</VALUE>
+                              </ECUC-NUMERICAL-PARAM-VALUE>
+                              <ECUC-NUMERICAL-PARAM-VALUE>
+                                 <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T40D2M4I0R98/Os/OsApplication/OsApplicationHooks/OsAppStartupHook</DEFINITION-REF>
+                                 <VALUE>0</VALUE>
+                              </ECUC-NUMERICAL-PARAM-VALUE>
+                           </PARAMETER-VALUES>
+                        </ECUC-CONTAINER-VALUE>
+                     </SUB-CONTAINERS>
+                  </ECUC-CONTAINER-VALUE>
+                  <ECUC-CONTAINER-VALUE>
+                     <SHORT-NAME>RCV_APP</SHORT-NAME>
+                     <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/TS_T40D2M4I0R98/Os/OsApplication</DEFINITION-REF>
+                     <PARAMETER-VALUES>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                           <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/TS_T40D2M4I0R98/Os/OsApplication/OsApplicationCoreAssignment</DEFINITION-REF>
+                           <VALUE>0</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                           <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T40D2M4I0R98/Os/OsApplication/OsTrusted</DEFINITION-REF>
+                           <VALUE>1</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                     </PARAMETER-VALUES>
+                     <REFERENCE-VALUES>
+                        <ECUC-REFERENCE-VALUE>
+                           <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/TS_T40D2M4I0R98/Os/OsApplication/OsAppAlarmRef</DEFINITION-REF>
+                           <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/Os/Os/TIMLIMITALARM</VALUE-REF>
+                        </ECUC-REFERENCE-VALUE>
+                        <ECUC-REFERENCE-VALUE>
+                           <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/TS_T40D2M4I0R98/Os/OsApplication/OsAppTaskRef</DEFINITION-REF>
+                           <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/Os/Os/TASKRCV1</VALUE-REF>
+                        </ECUC-REFERENCE-VALUE>
+                        <ECUC-REFERENCE-VALUE>
+                           <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/TS_T40D2M4I0R98/Os/OsApplication/OsAppTaskRef</DEFINITION-REF>
+                           <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/Os/Os/TASKRCV2</VALUE-REF>
+                        </ECUC-REFERENCE-VALUE>
+                        <ECUC-REFERENCE-VALUE>
+                           <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/TS_T40D2M4I0R98/Os/OsApplication/OsRestartTask</DEFINITION-REF>
+                           <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/Os/Os/TASKRCV1</VALUE-REF>
+                        </ECUC-REFERENCE-VALUE>
+                     </REFERENCE-VALUES>
+                     <SUB-CONTAINERS>
+                        <ECUC-CONTAINER-VALUE>
+                           <SHORT-NAME>OsApplicationHooks</SHORT-NAME>
+                           <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/TS_T40D2M4I0R98/Os/OsApplication/OsApplicationHooks</DEFINITION-REF>
+                           <PARAMETER-VALUES>
+                              <ECUC-NUMERICAL-PARAM-VALUE>
+                                 <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T40D2M4I0R98/Os/OsApplication/OsApplicationHooks/OsAppErrorHook</DEFINITION-REF>
+                                 <VALUE>1</VALUE>
+                              </ECUC-NUMERICAL-PARAM-VALUE>
+                              <ECUC-NUMERICAL-PARAM-VALUE>
+                                 <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T40D2M4I0R98/Os/OsApplication/OsApplicationHooks/OsAppShutdownHook</DEFINITION-REF>
+                                 <VALUE>0</VALUE>
+                              </ECUC-NUMERICAL-PARAM-VALUE>
+                              <ECUC-NUMERICAL-PARAM-VALUE>
+                                 <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T40D2M4I0R98/Os/OsApplication/OsApplicationHooks/OsAppStartupHook</DEFINITION-REF>
+                                 <VALUE>0</VALUE>
+                              </ECUC-NUMERICAL-PARAM-VALUE>
+                           </PARAMETER-VALUES>
+                        </ECUC-CONTAINER-VALUE>
+                     </SUB-CONTAINERS>
+                  </ECUC-CONTAINER-VALUE>
+                  <ECUC-CONTAINER-VALUE>
+                     <SHORT-NAME>TRUSTED_APP</SHORT-NAME>
+                     <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/TS_T40D2M4I0R98/Os/OsApplication</DEFINITION-REF>
+                     <PARAMETER-VALUES>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                           <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/TS_T40D2M4I0R98/Os/OsApplication/OsApplicationCoreAssignment</DEFINITION-REF>
+                           <VALUE>0</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                           <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T40D2M4I0R98/Os/OsApplication/OsTrusted</DEFINITION-REF>
+                           <VALUE>1</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                     </PARAMETER-VALUES>
+                     <REFERENCE-VALUES>
+                        <ECUC-REFERENCE-VALUE>
+                           <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/TS_T40D2M4I0R98/Os/OsApplication/OsAppAlarmRef</DEFINITION-REF>
+                           <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/Os/Os/STOPALARM</VALUE-REF>
+                        </ECUC-REFERENCE-VALUE>
+                        <ECUC-REFERENCE-VALUE>
+                           <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/TS_T40D2M4I0R98/Os/OsApplication/OsAppIsrRef</DEFINITION-REF>
+                           <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/Os/Os/ISR1</VALUE-REF>
+                        </ECUC-REFERENCE-VALUE>
+                        <ECUC-REFERENCE-VALUE>
+                           <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/TS_T40D2M4I0R98/Os/OsApplication/OsAppTaskRef</DEFINITION-REF>
+                           <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/Os/Os/TASKSTOP</VALUE-REF>
+                        </ECUC-REFERENCE-VALUE>
+                     </REFERENCE-VALUES>
+                     <SUB-CONTAINERS>
+                        <ECUC-CONTAINER-VALUE>
+                           <SHORT-NAME>OsApplicationHooks</SHORT-NAME>
+                           <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/TS_T40D2M4I0R98/Os/OsApplication/OsApplicationHooks</DEFINITION-REF>
+                           <PARAMETER-VALUES>
+                              <ECUC-NUMERICAL-PARAM-VALUE>
+                                 <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T40D2M4I0R98/Os/OsApplication/OsApplicationHooks/OsAppErrorHook</DEFINITION-REF>
+                                 <VALUE>1</VALUE>
+                              </ECUC-NUMERICAL-PARAM-VALUE>
+                              <ECUC-NUMERICAL-PARAM-VALUE>
+                                 <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T40D2M4I0R98/Os/OsApplication/OsApplicationHooks/OsAppShutdownHook</DEFINITION-REF>
+                                 <VALUE>0</VALUE>
+                              </ECUC-NUMERICAL-PARAM-VALUE>
+                              <ECUC-NUMERICAL-PARAM-VALUE>
+                                 <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T40D2M4I0R98/Os/OsApplication/OsApplicationHooks/OsAppStartupHook</DEFINITION-REF>
+                                 <VALUE>0</VALUE>
+                              </ECUC-NUMERICAL-PARAM-VALUE>
+                           </PARAMETER-VALUES>
+                        </ECUC-CONTAINER-VALUE>
+                     </SUB-CONTAINERS>
+                  </ECUC-CONTAINER-VALUE>
+                  <ECUC-CONTAINER-VALUE>
+                     <SHORT-NAME>SYSTEMTIMER</SHORT-NAME>
+                     <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/TS_T40D2M4I0R98/Os/OsCounter</DEFINITION-REF>
+                     <PARAMETER-VALUES>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                           <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/TS_T40D2M4I0R98/Os/OsCounter/OsCounterMaxAllowedValue</DEFINITION-REF>
+                           <VALUE>65535</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                           <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/TS_T40D2M4I0R98/Os/OsCounter/OsCounterMinCycle</DEFINITION-REF>
+                           <VALUE>1</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                           <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/TS_T40D2M4I0R98/Os/OsCounter/OsCounterTicksPerBase</DEFINITION-REF>
+                           <VALUE>10</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                           <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T40D2M4I0R98/Os/OsCounter/OsCounterType</DEFINITION-REF>
+                           <VALUE>HARDWARE</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                     </PARAMETER-VALUES>
+                  </ECUC-CONTAINER-VALUE>
+                  <ECUC-CONTAINER-VALUE>
+                     <SHORT-NAME>SECONDTIMER</SHORT-NAME>
+                     <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/TS_T40D2M4I0R98/Os/OsCounter</DEFINITION-REF>
+                     <PARAMETER-VALUES>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                           <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/TS_T40D2M4I0R98/Os/OsCounter/OsCounterMaxAllowedValue</DEFINITION-REF>
+                           <VALUE>30000</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                           <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/TS_T40D2M4I0R98/Os/OsCounter/OsCounterMinCycle</DEFINITION-REF>
+                           <VALUE>1</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                           <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/TS_T40D2M4I0R98/Os/OsCounter/OsCounterTicksPerBase</DEFINITION-REF>
+                           <VALUE>10</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                           <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T40D2M4I0R98/Os/OsCounter/OsCounterType</DEFINITION-REF>
+                           <VALUE>SOFTWARE</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                     </PARAMETER-VALUES>
+                     <REFERENCE-VALUES>
+                        <ECUC-REFERENCE-VALUE>
+                           <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/TS_T40D2M4I0R98/Os/OsCounter/OsCounterAccessingApplication</DEFINITION-REF>
+                           <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/Os/Os/RCV_APP</VALUE-REF>
+                        </ECUC-REFERENCE-VALUE>
+                     </REFERENCE-VALUES>
+                  </ECUC-CONTAINER-VALUE>
+                  <ECUC-CONTAINER-VALUE>
+                     <SHORT-NAME>STCOUNTER</SHORT-NAME>
+                     <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/TS_T40D2M4I0R98/Os/OsCounter</DEFINITION-REF>
+                     <PARAMETER-VALUES>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                           <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/TS_T40D2M4I0R98/Os/OsCounter/OsCounterMaxAllowedValue</DEFINITION-REF>
+                           <VALUE>20</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                           <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/TS_T40D2M4I0R98/Os/OsCounter/OsCounterMinCycle</DEFINITION-REF>
+                           <VALUE>1</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                           <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/TS_T40D2M4I0R98/Os/OsCounter/OsCounterTicksPerBase</DEFINITION-REF>
+                           <VALUE>1</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                           <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T40D2M4I0R98/Os/OsCounter/OsCounterType</DEFINITION-REF>
+                           <VALUE>SOFTWARE</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                     </PARAMETER-VALUES>
+                     <REFERENCE-VALUES>
+                        <ECUC-REFERENCE-VALUE>
+                           <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/TS_T40D2M4I0R98/Os/OsCounter/OsCounterAccessingApplication</DEFINITION-REF>
+                           <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/Os/Os/RCV_APP</VALUE-REF>
+                        </ECUC-REFERENCE-VALUE>
+                     </REFERENCE-VALUES>
+                  </ECUC-CONTAINER-VALUE>
+                  <ECUC-CONTAINER-VALUE>
+                     <SHORT-NAME>MSGAEVENT</SHORT-NAME>
+                     <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/TS_T40D2M4I0R98/Os/OsEvent</DEFINITION-REF>
+                  </ECUC-CONTAINER-VALUE>
+                  <ECUC-CONTAINER-VALUE>
+                     <SHORT-NAME>TIMLIMITEVENT</SHORT-NAME>
+                     <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/TS_T40D2M4I0R98/Os/OsEvent</DEFINITION-REF>
+                  </ECUC-CONTAINER-VALUE>
+                  <ECUC-CONTAINER-VALUE>
+                     <SHORT-NAME>OsIoc</SHORT-NAME>
+                     <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/TS_T40D2M4I0R98/Os/OsIoc</DEFINITION-REF>
+                     <SUB-CONTAINERS>
+                        <ECUC-CONTAINER-VALUE>
+                           <SHORT-NAME>MsgA</SHORT-NAME>
+                           <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/TS_T40D2M4I0R98/Os/OsIoc/OsIocCommunication</DEFINITION-REF>
+                           <PARAMETER-VALUES>
+                              <ECUC-NUMERICAL-PARAM-VALUE>
+                                 <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/TS_T40D2M4I0R98/Os/OsIoc/OsIocCommunication/OsIocBufferLength</DEFINITION-REF>
+                                 <VALUE>0</VALUE>
+                              </ECUC-NUMERICAL-PARAM-VALUE>
+                           </PARAMETER-VALUES>
+                           <SUB-CONTAINERS>
+                              <ECUC-CONTAINER-VALUE>
+                                 <SHORT-NAME>OsIocDataProperties</SHORT-NAME>
+                                 <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/TS_T40D2M4I0R98/Os/OsIoc/OsIocCommunication/OsIocDataProperties</DEFINITION-REF>
+                                 <PARAMETER-VALUES>
+                                    <ECUC-TEXTUAL-PARAM-VALUE>
+                                       <DEFINITION-REF DEST="ECUC-STRING-PARAM-DEF">/TS_T40D2M4I0R98/Os/OsIoc/OsIocCommunication/OsIocDataProperties/OsDataTypeName</DEFINITION-REF>
+                                       <VALUE>MSGATYPE</VALUE>
+                                    </ECUC-TEXTUAL-PARAM-VALUE>
+                                    <ECUC-TEXTUAL-PARAM-VALUE>
+                                       <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T40D2M4I0R98/Os/OsIoc/OsIocCommunication/OsIocDataProperties/OsDataTypeProperty</DEFINITION-REF>
+                                       <VALUE>REFERENCE</VALUE>
+                                    </ECUC-TEXTUAL-PARAM-VALUE>
+                                 </PARAMETER-VALUES>
+                                 <REFERENCE-VALUES>
+                                    <ECUC-REFERENCE-VALUE>
+                                       <DEFINITION-REF DEST="ECUC-FOREIGN-REFERENCE-DEF">/TS_T40D2M4I0R98/Os/OsIoc/OsIocCommunication/OsIocDataProperties/OsIocDataTypeRef</DEFINITION-REF>
+                                       <VALUE-REF DEST="IMPLEMENTATION-DATA-TYPE">/OsIocDataTypeRef</VALUE-REF>
+                                    </ECUC-REFERENCE-VALUE>
+                                 </REFERENCE-VALUES>
+                              </ECUC-CONTAINER-VALUE>
+                              <ECUC-CONTAINER-VALUE>
+                                 <SHORT-NAME>OsIocReceiverProperties</SHORT-NAME>
+                                 <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/TS_T40D2M4I0R98/Os/OsIoc/OsIocCommunication/OsIocReceiverProperties</DEFINITION-REF>
+                                 <REFERENCE-VALUES>
+                                    <ECUC-REFERENCE-VALUE>
+                                       <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/TS_T40D2M4I0R98/Os/OsIoc/OsIocCommunication/OsIocReceiverProperties/OsIocReceivingOsApplicationRef</DEFINITION-REF>
+                                       <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/Os/Os/RCV_APP</VALUE-REF>
+                                    </ECUC-REFERENCE-VALUE>
+                                 </REFERENCE-VALUES>
+                                 <SUB-CONTAINERS>
+                                    <ECUC-CONTAINER-VALUE>
+                                       <SHORT-NAME>OsIocAction</SHORT-NAME>
+                                       <DEFINITION-REF DEST="ECUC-CHOICE-CONTAINER-DEF">/TS_T40D2M4I0R98/Os/OsIoc/OsIocCommunication/OsIocReceiverProperties/OsIocAction</DEFINITION-REF>
+                                       <SUB-CONTAINERS>
+                                          <ECUC-CONTAINER-VALUE>
+                                             <SHORT-NAME>OsIocActionSetEvent</SHORT-NAME>
+                                             <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/TS_T40D2M4I0R98/Os/OsIoc/OsIocCommunication/OsIocReceiverProperties/OsIocAction/OsIocActionSetEvent</DEFINITION-REF>
+                                             <REFERENCE-VALUES>
+                                                <ECUC-REFERENCE-VALUE>
+                                                   <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/TS_T40D2M4I0R98/Os/OsIoc/OsIocCommunication/OsIocReceiverProperties/OsIocAction/OsIocActionSetEvent/OsIocActionEvent</DEFINITION-REF>
+                                                   <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/Os/Os/MSGAEVENT</VALUE-REF>
+                                                </ECUC-REFERENCE-VALUE>
+                                                <ECUC-REFERENCE-VALUE>
+                                                   <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/TS_T40D2M4I0R98/Os/OsIoc/OsIocCommunication/OsIocReceiverProperties/OsIocAction/OsIocActionSetEvent/OsIocActionTask</DEFINITION-REF>
+                                                   <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/Os/Os/TASKRCV1</VALUE-REF>
+                                                </ECUC-REFERENCE-VALUE>
+                                             </REFERENCE-VALUES>
+                                          </ECUC-CONTAINER-VALUE>
+                                       </SUB-CONTAINERS>
+                                    </ECUC-CONTAINER-VALUE>
+                                 </SUB-CONTAINERS>
+                              </ECUC-CONTAINER-VALUE>
+                              <ECUC-CONTAINER-VALUE>
+                                 <SHORT-NAME>OsIocSenderProperties</SHORT-NAME>
+                                 <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/TS_T40D2M4I0R98/Os/OsIoc/OsIocCommunication/OsIocSenderProperties</DEFINITION-REF>
+                                 <REFERENCE-VALUES>
+                                    <ECUC-REFERENCE-VALUE>
+                                       <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/TS_T40D2M4I0R98/Os/OsIoc/OsIocCommunication/OsIocSenderProperties/OsIocSendingOsApplicationRef</DEFINITION-REF>
+                                       <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/Os/Os/SND_APP</VALUE-REF>
+                                    </ECUC-REFERENCE-VALUE>
+                                 </REFERENCE-VALUES>
+                              </ECUC-CONTAINER-VALUE>
+                           </SUB-CONTAINERS>
+                        </ECUC-CONTAINER-VALUE>
+                        <ECUC-CONTAINER-VALUE>
+                           <SHORT-NAME>MsgB</SHORT-NAME>
+                           <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/TS_T40D2M4I0R98/Os/OsIoc/OsIocCommunication</DEFINITION-REF>
+                           <PARAMETER-VALUES>
+                              <ECUC-NUMERICAL-PARAM-VALUE>
+                                 <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/TS_T40D2M4I0R98/Os/OsIoc/OsIocCommunication/OsIocBufferLength</DEFINITION-REF>
+                                 <VALUE>0</VALUE>
+                              </ECUC-NUMERICAL-PARAM-VALUE>
+                           </PARAMETER-VALUES>
+                           <SUB-CONTAINERS>
+                              <ECUC-CONTAINER-VALUE>
+                                 <SHORT-NAME>OsIocDataProperties</SHORT-NAME>
+                                 <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/TS_T40D2M4I0R98/Os/OsIoc/OsIocCommunication/OsIocDataProperties</DEFINITION-REF>
+                                 <PARAMETER-VALUES>
+                                    <ECUC-TEXTUAL-PARAM-VALUE>
+                                       <DEFINITION-REF DEST="ECUC-STRING-PARAM-DEF">/TS_T40D2M4I0R98/Os/OsIoc/OsIocCommunication/OsIocDataProperties/OsDataTypeName</DEFINITION-REF>
+                                       <VALUE>MSGBTYPE</VALUE>
+                                    </ECUC-TEXTUAL-PARAM-VALUE>
+                                    <ECUC-TEXTUAL-PARAM-VALUE>
+                                       <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T40D2M4I0R98/Os/OsIoc/OsIocCommunication/OsIocDataProperties/OsDataTypeProperty</DEFINITION-REF>
+                                       <VALUE>REFERENCE</VALUE>
+                                    </ECUC-TEXTUAL-PARAM-VALUE>
+                                 </PARAMETER-VALUES>
+                                 <REFERENCE-VALUES>
+                                    <ECUC-REFERENCE-VALUE>
+                                       <DEFINITION-REF DEST="ECUC-FOREIGN-REFERENCE-DEF">/TS_T40D2M4I0R98/Os/OsIoc/OsIocCommunication/OsIocDataProperties/OsIocDataTypeRef</DEFINITION-REF>
+                                       <VALUE-REF DEST="IMPLEMENTATION-DATA-TYPE">/OsIocDataTypeRef</VALUE-REF>
+                                    </ECUC-REFERENCE-VALUE>
+                                 </REFERENCE-VALUES>
+                              </ECUC-CONTAINER-VALUE>
+                              <ECUC-CONTAINER-VALUE>
+                                 <SHORT-NAME>OsIocReceiverProperties</SHORT-NAME>
+                                 <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/TS_T40D2M4I0R98/Os/OsIoc/OsIocCommunication/OsIocReceiverProperties</DEFINITION-REF>
+                                 <REFERENCE-VALUES>
+                                    <ECUC-REFERENCE-VALUE>
+                                       <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/TS_T40D2M4I0R98/Os/OsIoc/OsIocCommunication/OsIocReceiverProperties/OsIocReceivingOsApplicationRef</DEFINITION-REF>
+                                       <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/Os/Os/RCV_APP</VALUE-REF>
+                                    </ECUC-REFERENCE-VALUE>
+                                 </REFERENCE-VALUES>
+                                 <SUB-CONTAINERS>
+                                    <ECUC-CONTAINER-VALUE>
+                                       <SHORT-NAME>OsIocAction</SHORT-NAME>
+                                       <DEFINITION-REF DEST="ECUC-CHOICE-CONTAINER-DEF">/TS_T40D2M4I0R98/Os/OsIoc/OsIocCommunication/OsIocReceiverProperties/OsIocAction</DEFINITION-REF>
+                                       <SUB-CONTAINERS>
+                                          <ECUC-CONTAINER-VALUE>
+                                             <SHORT-NAME>OsIocActionActivateTask</SHORT-NAME>
+                                             <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/TS_T40D2M4I0R98/Os/OsIoc/OsIocCommunication/OsIocReceiverProperties/OsIocAction/OsIocActionActivateTask</DEFINITION-REF>
+                                             <REFERENCE-VALUES>
+                                                <ECUC-REFERENCE-VALUE>
+                                                   <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/TS_T40D2M4I0R98/Os/OsIoc/OsIocCommunication/OsIocReceiverProperties/OsIocAction/OsIocActionActivateTask/OsIocActionTask</DEFINITION-REF>
+                                                   <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/Os/Os/TASKRCV2</VALUE-REF>
+                                                </ECUC-REFERENCE-VALUE>
+                                             </REFERENCE-VALUES>
+                                          </ECUC-CONTAINER-VALUE>
+                                       </SUB-CONTAINERS>
+                                    </ECUC-CONTAINER-VALUE>
+                                 </SUB-CONTAINERS>
+                              </ECUC-CONTAINER-VALUE>
+                              <ECUC-CONTAINER-VALUE>
+                                 <SHORT-NAME>OsIocSenderProperties</SHORT-NAME>
+                                 <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/TS_T40D2M4I0R98/Os/OsIoc/OsIocCommunication/OsIocSenderProperties</DEFINITION-REF>
+                                 <REFERENCE-VALUES>
+                                    <ECUC-REFERENCE-VALUE>
+                                       <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/TS_T40D2M4I0R98/Os/OsIoc/OsIocCommunication/OsIocSenderProperties/OsIocSendingOsApplicationRef</DEFINITION-REF>
+                                       <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/Os/Os/SND_APP</VALUE-REF>
+                                    </ECUC-REFERENCE-VALUE>
+                                 </REFERENCE-VALUES>
+                              </ECUC-CONTAINER-VALUE>
+                           </SUB-CONTAINERS>
+                        </ECUC-CONTAINER-VALUE>
+                     </SUB-CONTAINERS>
+                  </ECUC-CONTAINER-VALUE>
+                  <ECUC-CONTAINER-VALUE>
+                     <SHORT-NAME>ISR1</SHORT-NAME>
+                     <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/TS_T40D2M4I0R98/Os/OsIsr</DEFINITION-REF>
+                     <PARAMETER-VALUES>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                           <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T40D2M4I0R98/Os/OsIsr/OsIsrCategory</DEFINITION-REF>
+                           <VALUE>CATEGORY_2</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                           <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/TS_T40D2M4I0R98/Os/OsIsr/OsPriority</DEFINITION-REF>
+                           <VALUE>5</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                     </PARAMETER-VALUES>
+                     <SUB-CONTAINERS>
+                        <ECUC-CONTAINER-VALUE>
+                           <SHORT-NAME>OsIrqChannel</SHORT-NAME>
+                           <DEFINITION-REF DEST="ECUC-CHOICE-CONTAINER-DEF">/TS_T40D2M4I0R98/Os/OsIsr/OsIrqChannel</DEFINITION-REF>
+                           <SUB-CONTAINERS>
+                              <ECUC-CONTAINER-VALUE>
+                                 <SHORT-NAME>EXTERNAL</SHORT-NAME>
+                                 <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/TS_T40D2M4I0R98/Os/OsIsr/OsIrqChannel/EXTERNAL</DEFINITION-REF>
+                                 <PARAMETER-VALUES>
+                                    <ECUC-NUMERICAL-PARAM-VALUE>
+                                       <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/TS_T40D2M4I0R98/Os/OsIsr/OsIrqChannel/EXTERNAL/OsIrqNumber</DEFINITION-REF>
+                                       <VALUE>114</VALUE>
+                                    </ECUC-NUMERICAL-PARAM-VALUE>
+                                 </PARAMETER-VALUES>
+                              </ECUC-CONTAINER-VALUE>
+                           </SUB-CONTAINERS>
+                        </ECUC-CONTAINER-VALUE>
+                     </SUB-CONTAINERS>
+                  </ECUC-CONTAINER-VALUE>
+                  <ECUC-CONTAINER-VALUE>
+                     <SHORT-NAME>os1</SHORT-NAME>
+                     <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/TS_T40D2M4I0R98/Os/OsOS</DEFINITION-REF>
+                     <PARAMETER-VALUES>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                           <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/TS_T40D2M4I0R98/Os/OsOS/OsNumberOfCores</DEFINITION-REF>
+                           <VALUE>1</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                           <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T40D2M4I0R98/Os/OsOS/OsScalabilityClass</DEFINITION-REF>
+                           <VALUE>SC1</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                           <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T40D2M4I0R98/Os/OsOS/OsStackMonitoring</DEFINITION-REF>
+                           <VALUE>1</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                           <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T40D2M4I0R98/Os/OsOS/OsStatus</DEFINITION-REF>
+                           <VALUE>EXTENDED</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                           <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T40D2M4I0R98/Os/OsOS/OsUseGetServiceId</DEFINITION-REF>
+                           <VALUE>0</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                           <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T40D2M4I0R98/Os/OsOS/OsUseParameterAccess</DEFINITION-REF>
+                           <VALUE>0</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                           <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T40D2M4I0R98/Os/OsOS/OsUseResScheduler</DEFINITION-REF>
+                           <VALUE>1</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                           <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/TS_T40D2M4I0R98/Os/OsOS/OsDebugLevel</DEFINITION-REF>
+                           <VALUE>2</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                           <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/TS_T40D2M4I0R98/Os/OsOS/OsIsrStackSize</DEFINITION-REF>
+                           <VALUE>800</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                           <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/TS_T40D2M4I0R98/Os/OsOS/OsPattern</DEFINITION-REF>
+                           <VALUE>3735901610</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                           <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T40D2M4I0R98/Os/OsOS/OsPatternSize</DEFINITION-REF>
+                           <VALUE>FOUR</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                     </PARAMETER-VALUES>
+                     <SUB-CONTAINERS>
+                        <ECUC-CONTAINER-VALUE>
+                           <SHORT-NAME>OsHooks</SHORT-NAME>
+                           <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/TS_T40D2M4I0R98/Os/OsOS/OsHooks</DEFINITION-REF>
+                           <PARAMETER-VALUES>
+                              <ECUC-NUMERICAL-PARAM-VALUE>
+                                 <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T40D2M4I0R98/Os/OsOS/OsHooks/OsErrorHook</DEFINITION-REF>
+                                 <VALUE>1</VALUE>
+                              </ECUC-NUMERICAL-PARAM-VALUE>
+                              <ECUC-NUMERICAL-PARAM-VALUE>
+                                 <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T40D2M4I0R98/Os/OsOS/OsHooks/OsPostTaskHook</DEFINITION-REF>
+                                 <VALUE>1</VALUE>
+                              </ECUC-NUMERICAL-PARAM-VALUE>
+                              <ECUC-NUMERICAL-PARAM-VALUE>
+                                 <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T40D2M4I0R98/Os/OsOS/OsHooks/OsPreTaskHook</DEFINITION-REF>
+                                 <VALUE>1</VALUE>
+                              </ECUC-NUMERICAL-PARAM-VALUE>
+                              <ECUC-NUMERICAL-PARAM-VALUE>
+                                 <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T40D2M4I0R98/Os/OsOS/OsHooks/OsShutdownHook</DEFINITION-REF>
+                                 <VALUE>0</VALUE>
+                              </ECUC-NUMERICAL-PARAM-VALUE>
+                              <ECUC-NUMERICAL-PARAM-VALUE>
+                                 <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T40D2M4I0R98/Os/OsOS/OsHooks/OsStartupHook</DEFINITION-REF>
+                                 <VALUE>0</VALUE>
+                              </ECUC-NUMERICAL-PARAM-VALUE>
+                           </PARAMETER-VALUES>
+                        </ECUC-CONTAINER-VALUE>
+                        <ECUC-CONTAINER-VALUE>
+                           <SHORT-NAME>OsTargetMCU</SHORT-NAME>
+                           <DEFINITION-REF DEST="ECUC-CHOICE-CONTAINER-DEF">/TS_T40D2M4I0R98/Os/OsOS/OsTargetMCU</DEFINITION-REF>
+                           <SUB-CONTAINERS>
+                              <ECUC-CONTAINER-VALUE>
+                                 <SHORT-NAME>S32K</SHORT-NAME>
+                                 <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/TS_T40D2M4I0R98/Os/OsOS/OsTargetMCU/S32K</DEFINITION-REF>
+                                 <SUB-CONTAINERS>
+                                    <ECUC-CONTAINER-VALUE>
+                                       <SHORT-NAME>OsSecondTimer</SHORT-NAME>
+                                       <DEFINITION-REF DEST="ECUC-CHOICE-CONTAINER-DEF">/TS_T40D2M4I0R98/Os/OsOS/OsTargetMCU/S32K/OsSecondTimer</DEFINITION-REF>
+                                       <SUB-CONTAINERS>
+                                          <ECUC-CONTAINER-VALUE>
+                                             <SHORT-NAME>SWCOUNTER</SHORT-NAME>
+                                             <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/TS_T40D2M4I0R98/Os/OsOS/OsTargetMCU/S32K/OsSecondTimer/SWCOUNTER</DEFINITION-REF>
+                                             <PARAMETER-VALUES>
+                                                <ECUC-NUMERICAL-PARAM-VALUE>
+                                                   <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/TS_T40D2M4I0R98/Os/OsOS/OsTargetMCU/S32K/OsSecondTimer/SWCOUNTER/OsIsrPriority</DEFINITION-REF>
+                                                   <VALUE>4</VALUE>
+                                                </ECUC-NUMERICAL-PARAM-VALUE>
+                                             </PARAMETER-VALUES>
+                                             <REFERENCE-VALUES>
+                                                <ECUC-REFERENCE-VALUE>
+                                                   <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/TS_T40D2M4I0R98/Os/OsOS/OsTargetMCU/S32K/OsSecondTimer/SWCOUNTER/OsCounter</DEFINITION-REF>
+                                                   <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/Os/Os/SECONDTIMER</VALUE-REF>
+                                                </ECUC-REFERENCE-VALUE>
+                                             </REFERENCE-VALUES>
+                                             <SUB-CONTAINERS>
+                                                <ECUC-CONTAINER-VALUE>
+                                                   <SHORT-NAME>OsTimerHardware</SHORT-NAME>
+                                                   <DEFINITION-REF DEST="ECUC-CHOICE-CONTAINER-DEF">/TS_T40D2M4I0R98/Os/OsOS/OsTargetMCU/S32K/OsSecondTimer/SWCOUNTER/OsTimerHardware</DEFINITION-REF>
+                                                   <SUB-CONTAINERS>
+                                                      <ECUC-CONTAINER-VALUE>
+                                                         <SHORT-NAME>SYSTICK</SHORT-NAME>
+                                                         <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/TS_T40D2M4I0R98/Os/OsOS/OsTargetMCU/S32K/OsSecondTimer/SWCOUNTER/OsTimerHardware/SYSTICK</DEFINITION-REF>
+                                                         <PARAMETER-VALUES>
+                                                            <ECUC-NUMERICAL-PARAM-VALUE>
+                                                               <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/TS_T40D2M4I0R98/Os/OsOS/OsTargetMCU/S32K/OsSecondTimer/SWCOUNTER/OsTimerHardware/SYSTICK/OsTimerModuloValue</DEFINITION-REF>
+                                                               <VALUE>30000</VALUE>
+                                                            </ECUC-NUMERICAL-PARAM-VALUE>
+                                                         </PARAMETER-VALUES>
+                                                      </ECUC-CONTAINER-VALUE>
+                                                   </SUB-CONTAINERS>
+                                                </ECUC-CONTAINER-VALUE>
+                                             </SUB-CONTAINERS>
+                                          </ECUC-CONTAINER-VALUE>
+                                       </SUB-CONTAINERS>
+                                    </ECUC-CONTAINER-VALUE>
+                                    <ECUC-CONTAINER-VALUE>
+                                       <SHORT-NAME>OsSysTimer</SHORT-NAME>
+                                       <DEFINITION-REF DEST="ECUC-CHOICE-CONTAINER-DEF">/TS_T40D2M4I0R98/Os/OsOS/OsTargetMCU/S32K/OsSysTimer</DEFINITION-REF>
+                                       <SUB-CONTAINERS>
+                                          <ECUC-CONTAINER-VALUE>
+                                             <SHORT-NAME>HWCOUNTER</SHORT-NAME>
+                                             <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/TS_T40D2M4I0R98/Os/OsOS/OsTargetMCU/S32K/OsSysTimer/HWCOUNTER</DEFINITION-REF>
+                                             <PARAMETER-VALUES>
+                                                <ECUC-NUMERICAL-PARAM-VALUE>
+                                                   <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/TS_T40D2M4I0R98/Os/OsOS/OsTargetMCU/S32K/OsSysTimer/HWCOUNTER/OsIsrPriority</DEFINITION-REF>
+                                                   <VALUE>2</VALUE>
+                                                </ECUC-NUMERICAL-PARAM-VALUE>
+                                             </PARAMETER-VALUES>
+                                             <REFERENCE-VALUES>
+                                                <ECUC-REFERENCE-VALUE>
+                                                   <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/TS_T40D2M4I0R98/Os/OsOS/OsTargetMCU/S32K/OsSysTimer/HWCOUNTER/OsCounter</DEFINITION-REF>
+                                                   <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/Os/Os/SYSTEMTIMER</VALUE-REF>
+                                                </ECUC-REFERENCE-VALUE>
+                                             </REFERENCE-VALUES>
+                                             <SUB-CONTAINERS>
+                                                <ECUC-CONTAINER-VALUE>
+                                                   <SHORT-NAME>OsTimerHardware</SHORT-NAME>
+                                                   <DEFINITION-REF DEST="ECUC-CHOICE-CONTAINER-DEF">/TS_T40D2M4I0R98/Os/OsOS/OsTargetMCU/S32K/OsSysTimer/HWCOUNTER/OsTimerHardware</DEFINITION-REF>
+                                                   <SUB-CONTAINERS>
+                                                      <ECUC-CONTAINER-VALUE>
+                                                         <SHORT-NAME>FTM0</SHORT-NAME>
+                                                         <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/TS_T40D2M4I0R98/Os/OsOS/OsTargetMCU/S32K/OsSysTimer/HWCOUNTER/OsTimerHardware/FTM0</DEFINITION-REF>
+                                                         <PARAMETER-VALUES>
+                                                            <ECUC-NUMERICAL-PARAM-VALUE>
+                                                               <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/TS_T40D2M4I0R98/Os/OsOS/OsTargetMCU/S32K/OsSysTimer/HWCOUNTER/OsTimerHardware/FTM0/OsChannel</DEFINITION-REF>
+                                                               <VALUE>0</VALUE>
+                                                            </ECUC-NUMERICAL-PARAM-VALUE>
+                                                            <ECUC-NUMERICAL-PARAM-VALUE>
+                                                               <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T40D2M4I0R98/Os/OsOS/OsTargetMCU/S32K/OsSysTimer/HWCOUNTER/OsTimerHardware/FTM0/OsFreeze</DEFINITION-REF>
+                                                               <VALUE>0</VALUE>
+                                                            </ECUC-NUMERICAL-PARAM-VALUE>
+                                                         </PARAMETER-VALUES>
+                                                         <SUB-CONTAINERS>
+                                                            <ECUC-CONTAINER-VALUE>
+                                                               <SHORT-NAME>OsGlobalFTMPrescaler</SHORT-NAME>
+                                                               <DEFINITION-REF DEST="ECUC-CHOICE-CONTAINER-DEF">/TS_T40D2M4I0R98/Os/OsOS/OsTargetMCU/S32K/OsSysTimer/HWCOUNTER/OsTimerHardware/FTM0/OsGlobalFTMPrescaler</DEFINITION-REF>
+                                                               <SUB-CONTAINERS>
+                                                                  <ECUC-CONTAINER-VALUE>
+                                                                     <SHORT-NAME>OS</SHORT-NAME>
+                                                                     <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/TS_T40D2M4I0R98/Os/OsOS/OsTargetMCU/S32K/OsSysTimer/HWCOUNTER/OsTimerHardware/FTM0/OsGlobalFTMPrescaler/OS</DEFINITION-REF>
+                                                                     <PARAMETER-VALUES>
+                                                                        <ECUC-NUMERICAL-PARAM-VALUE>
+                                                                           <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/TS_T40D2M4I0R98/Os/OsOS/OsTargetMCU/S32K/OsSysTimer/HWCOUNTER/OsTimerHardware/FTM0/OsGlobalFTMPrescaler/OS/OsValue</DEFINITION-REF>
+                                                                           <VALUE>2</VALUE>
+                                                                        </ECUC-NUMERICAL-PARAM-VALUE>
+                                                                     </PARAMETER-VALUES>
+                                                                  </ECUC-CONTAINER-VALUE>
+                                                               </SUB-CONTAINERS>
+                                                            </ECUC-CONTAINER-VALUE>
+                                                         </SUB-CONTAINERS>
+                                                      </ECUC-CONTAINER-VALUE>
+                                                   </SUB-CONTAINERS>
+                                                </ECUC-CONTAINER-VALUE>
+                                             </SUB-CONTAINERS>
+                                          </ECUC-CONTAINER-VALUE>
+                                       </SUB-CONTAINERS>
+                                    </ECUC-CONTAINER-VALUE>
+                                 </SUB-CONTAINERS>
+                              </ECUC-CONTAINER-VALUE>
+                           </SUB-CONTAINERS>
+                        </ECUC-CONTAINER-VALUE>
+                     </SUB-CONTAINERS>
+                  </ECUC-CONTAINER-VALUE>
+                  <ECUC-CONTAINER-VALUE>
+                     <SHORT-NAME>MSGAACCESS</SHORT-NAME>
+                     <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/TS_T40D2M4I0R98/Os/OsResource</DEFINITION-REF>
+                     <PARAMETER-VALUES>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                           <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T40D2M4I0R98/Os/OsResource/OsResourceProperty</DEFINITION-REF>
+                           <VALUE>STANDARD</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                     </PARAMETER-VALUES>
+                     <REFERENCE-VALUES>
+                        <ECUC-REFERENCE-VALUE>
+                           <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/TS_T40D2M4I0R98/Os/OsResource/OsResourceAccessingApplication</DEFINITION-REF>
+                           <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/Os/Os/SND_APP</VALUE-REF>
+                        </ECUC-REFERENCE-VALUE>
+                        <ECUC-REFERENCE-VALUE>
+                           <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/TS_T40D2M4I0R98/Os/OsResource/OsResourceAccessingApplication</DEFINITION-REF>
+                           <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/Os/Os/RCV_APP</VALUE-REF>
+                        </ECUC-REFERENCE-VALUE>
+                     </REFERENCE-VALUES>
+                  </ECUC-CONTAINER-VALUE>
+                  <ECUC-CONTAINER-VALUE>
+                     <SHORT-NAME>MSGBACCESS</SHORT-NAME>
+                     <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/TS_T40D2M4I0R98/Os/OsResource</DEFINITION-REF>
+                     <PARAMETER-VALUES>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                           <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T40D2M4I0R98/Os/OsResource/OsResourceProperty</DEFINITION-REF>
+                           <VALUE>STANDARD</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                     </PARAMETER-VALUES>
+                     <REFERENCE-VALUES>
+                        <ECUC-REFERENCE-VALUE>
+                           <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/TS_T40D2M4I0R98/Os/OsResource/OsResourceAccessingApplication</DEFINITION-REF>
+                           <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/Os/Os/SND_APP</VALUE-REF>
+                        </ECUC-REFERENCE-VALUE>
+                        <ECUC-REFERENCE-VALUE>
+                           <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/TS_T40D2M4I0R98/Os/OsResource/OsResourceAccessingApplication</DEFINITION-REF>
+                           <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/Os/Os/RCV_APP</VALUE-REF>
+                        </ECUC-REFERENCE-VALUE>
+                     </REFERENCE-VALUES>
+                  </ECUC-CONTAINER-VALUE>
+                  <ECUC-CONTAINER-VALUE>
+                     <SHORT-NAME>SCHEDTAB</SHORT-NAME>
+                     <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/TS_T40D2M4I0R98/Os/OsScheduleTable</DEFINITION-REF>
+                     <PARAMETER-VALUES>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                           <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/TS_T40D2M4I0R98/Os/OsScheduleTable/OsScheduleTableDuration</DEFINITION-REF>
+                           <VALUE>30000</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                           <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T40D2M4I0R98/Os/OsScheduleTable/OsScheduleTableRepeating</DEFINITION-REF>
+                           <VALUE>1</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                     </PARAMETER-VALUES>
+                     <REFERENCE-VALUES>
+                        <ECUC-REFERENCE-VALUE>
+                           <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/TS_T40D2M4I0R98/Os/OsScheduleTable/OsSchTblAccessingApplication</DEFINITION-REF>
+                           <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/Os/Os/RCV_APP</VALUE-REF>
+                        </ECUC-REFERENCE-VALUE>
+                        <ECUC-REFERENCE-VALUE>
+                           <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/TS_T40D2M4I0R98/Os/OsScheduleTable/OsSchTblAccessingApplication</DEFINITION-REF>
+                           <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/Os/Os/TRUSTED_APP</VALUE-REF>
+                        </ECUC-REFERENCE-VALUE>
+                        <ECUC-REFERENCE-VALUE>
+                           <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/TS_T40D2M4I0R98/Os/OsScheduleTable/OsScheduleTableCounterRef</DEFINITION-REF>
+                           <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/Os/Os/SYSTEMTIMER</VALUE-REF>
+                        </ECUC-REFERENCE-VALUE>
+                     </REFERENCE-VALUES>
+                     <SUB-CONTAINERS>
+                        <ECUC-CONTAINER-VALUE>
+                           <SHORT-NAME>OsScheduleTableExpiryPoint0</SHORT-NAME>
+                           <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/TS_T40D2M4I0R98/Os/OsScheduleTable/OsScheduleTableExpiryPoint</DEFINITION-REF>
+                           <PARAMETER-VALUES>
+                              <ECUC-NUMERICAL-PARAM-VALUE>
+                                 <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/TS_T40D2M4I0R98/Os/OsScheduleTable/OsScheduleTableExpiryPoint/OsScheduleTblExpPointOffset</DEFINITION-REF>
+                                 <VALUE>0</VALUE>
+                              </ECUC-NUMERICAL-PARAM-VALUE>
+                           </PARAMETER-VALUES>
+                           <SUB-CONTAINERS>
+                              <ECUC-CONTAINER-VALUE>
+                                 <SHORT-NAME>OsScheduleTableTaskActivation</SHORT-NAME>
+                                 <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/TS_T40D2M4I0R98/Os/OsScheduleTable/OsScheduleTableExpiryPoint/OsScheduleTableTaskActivation</DEFINITION-REF>
+                                 <REFERENCE-VALUES>
+                                    <ECUC-REFERENCE-VALUE>
+                                       <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/TS_T40D2M4I0R98/Os/OsScheduleTable/OsScheduleTableExpiryPoint/OsScheduleTableTaskActivation/OsScheduleTableActivateTaskRef</DEFINITION-REF>
+                                       <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/Os/Os/TASKSND1</VALUE-REF>
+                                    </ECUC-REFERENCE-VALUE>
+                                 </REFERENCE-VALUES>
+                              </ECUC-CONTAINER-VALUE>
+                           </SUB-CONTAINERS>
+                        </ECUC-CONTAINER-VALUE>
+                        <ECUC-CONTAINER-VALUE>
+                           <SHORT-NAME>OsScheduleTableExpiryPoint1</SHORT-NAME>
+                           <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/TS_T40D2M4I0R98/Os/OsScheduleTable/OsScheduleTableExpiryPoint</DEFINITION-REF>
+                           <PARAMETER-VALUES>
+                              <ECUC-NUMERICAL-PARAM-VALUE>
+                                 <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/TS_T40D2M4I0R98/Os/OsScheduleTable/OsScheduleTableExpiryPoint/OsScheduleTblExpPointOffset</DEFINITION-REF>
+                                 <VALUE>15000</VALUE>
+                              </ECUC-NUMERICAL-PARAM-VALUE>
+                           </PARAMETER-VALUES>
+                           <SUB-CONTAINERS>
+                              <ECUC-CONTAINER-VALUE>
+                                 <SHORT-NAME>OsScheduleTableTaskActivation</SHORT-NAME>
+                                 <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/TS_T40D2M4I0R98/Os/OsScheduleTable/OsScheduleTableExpiryPoint/OsScheduleTableTaskActivation</DEFINITION-REF>
+                                 <REFERENCE-VALUES>
+                                    <ECUC-REFERENCE-VALUE>
+                                       <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/TS_T40D2M4I0R98/Os/OsScheduleTable/OsScheduleTableExpiryPoint/OsScheduleTableTaskActivation/OsScheduleTableActivateTaskRef</DEFINITION-REF>
+                                       <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/Os/Os/TASKSND2</VALUE-REF>
+                                    </ECUC-REFERENCE-VALUE>
+                                 </REFERENCE-VALUES>
+                              </ECUC-CONTAINER-VALUE>
+                           </SUB-CONTAINERS>
+                        </ECUC-CONTAINER-VALUE>
+                        <ECUC-CONTAINER-VALUE>
+                           <SHORT-NAME>OsScheduleTableExpiryPoint2</SHORT-NAME>
+                           <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/TS_T40D2M4I0R98/Os/OsScheduleTable/OsScheduleTableExpiryPoint</DEFINITION-REF>
+                           <PARAMETER-VALUES>
+                              <ECUC-NUMERICAL-PARAM-VALUE>
+                                 <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/TS_T40D2M4I0R98/Os/OsScheduleTable/OsScheduleTableExpiryPoint/OsScheduleTblExpPointOffset</DEFINITION-REF>
+                                 <VALUE>22500</VALUE>
+                              </ECUC-NUMERICAL-PARAM-VALUE>
+                           </PARAMETER-VALUES>
+                           <SUB-CONTAINERS>
+                              <ECUC-CONTAINER-VALUE>
+                                 <SHORT-NAME>OsScheduleTableTaskActivation</SHORT-NAME>
+                                 <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/TS_T40D2M4I0R98/Os/OsScheduleTable/OsScheduleTableExpiryPoint/OsScheduleTableTaskActivation</DEFINITION-REF>
+                                 <REFERENCE-VALUES>
+                                    <ECUC-REFERENCE-VALUE>
+                                       <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/TS_T40D2M4I0R98/Os/OsScheduleTable/OsScheduleTableExpiryPoint/OsScheduleTableTaskActivation/OsScheduleTableActivateTaskRef</DEFINITION-REF>
+                                       <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/Os/Os/TASKCNT</VALUE-REF>
+                                    </ECUC-REFERENCE-VALUE>
+                                 </REFERENCE-VALUES>
+                              </ECUC-CONTAINER-VALUE>
+                           </SUB-CONTAINERS>
+                        </ECUC-CONTAINER-VALUE>
+                     </SUB-CONTAINERS>
+                  </ECUC-CONTAINER-VALUE>
+                  <ECUC-CONTAINER-VALUE>
+                     <SHORT-NAME>TASKSND1</SHORT-NAME>
+                     <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/TS_T40D2M4I0R98/Os/OsTask</DEFINITION-REF>
+                     <PARAMETER-VALUES>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                           <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/TS_T40D2M4I0R98/Os/OsTask/OsTaskActivation</DEFINITION-REF>
+                           <VALUE>1</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                           <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/TS_T40D2M4I0R98/Os/OsTask/OsTaskPriority</DEFINITION-REF>
+                           <VALUE>3</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                           <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T40D2M4I0R98/Os/OsTask/OsTaskSchedule</DEFINITION-REF>
+                           <VALUE>FULL</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                     </PARAMETER-VALUES>
+                     <REFERENCE-VALUES>
+                        <ECUC-REFERENCE-VALUE>
+                           <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/TS_T40D2M4I0R98/Os/OsTask/OsTaskResourceRef</DEFINITION-REF>
+                           <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/Os/Os/MSGAACCESS</VALUE-REF>
+                        </ECUC-REFERENCE-VALUE>
+                     </REFERENCE-VALUES>
+                  </ECUC-CONTAINER-VALUE>
+                  <ECUC-CONTAINER-VALUE>
+                     <SHORT-NAME>TASKSND2</SHORT-NAME>
+                     <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/TS_T40D2M4I0R98/Os/OsTask</DEFINITION-REF>
+                     <PARAMETER-VALUES>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                           <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/TS_T40D2M4I0R98/Os/OsTask/OsTaskActivation</DEFINITION-REF>
+                           <VALUE>1</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                           <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/TS_T40D2M4I0R98/Os/OsTask/OsTaskPriority</DEFINITION-REF>
+                           <VALUE>2</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                           <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T40D2M4I0R98/Os/OsTask/OsTaskSchedule</DEFINITION-REF>
+                           <VALUE>FULL</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                     </PARAMETER-VALUES>
+                     <REFERENCE-VALUES>
+                        <ECUC-REFERENCE-VALUE>
+                           <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/TS_T40D2M4I0R98/Os/OsTask/OsTaskResourceRef</DEFINITION-REF>
+                           <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/Os/Os/MSGBACCESS</VALUE-REF>
+                        </ECUC-REFERENCE-VALUE>
+                     </REFERENCE-VALUES>
+                  </ECUC-CONTAINER-VALUE>
+                  <ECUC-CONTAINER-VALUE>
+                     <SHORT-NAME>TASKCNT</SHORT-NAME>
+                     <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/TS_T40D2M4I0R98/Os/OsTask</DEFINITION-REF>
+                     <PARAMETER-VALUES>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                           <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/TS_T40D2M4I0R98/Os/OsTask/OsTaskActivation</DEFINITION-REF>
+                           <VALUE>1</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                           <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/TS_T40D2M4I0R98/Os/OsTask/OsTaskPriority</DEFINITION-REF>
+                           <VALUE>1</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                           <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T40D2M4I0R98/Os/OsTask/OsTaskSchedule</DEFINITION-REF>
+                           <VALUE>NON</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                     </PARAMETER-VALUES>
+                  </ECUC-CONTAINER-VALUE>
+                  <ECUC-CONTAINER-VALUE>
+                     <SHORT-NAME>TASKRCV1</SHORT-NAME>
+                     <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/TS_T40D2M4I0R98/Os/OsTask</DEFINITION-REF>
+                     <PARAMETER-VALUES>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                           <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/TS_T40D2M4I0R98/Os/OsTask/OsTaskActivation</DEFINITION-REF>
+                           <VALUE>1</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                           <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/TS_T40D2M4I0R98/Os/OsTask/OsTaskPriority</DEFINITION-REF>
+                           <VALUE>5</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                           <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T40D2M4I0R98/Os/OsTask/OsTaskSchedule</DEFINITION-REF>
+                           <VALUE>FULL</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                           <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/TS_T40D2M4I0R98/Os/OsTask/OsStackSize</DEFINITION-REF>
+                           <VALUE>400</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                     </PARAMETER-VALUES>
+                     <REFERENCE-VALUES>
+                        <ECUC-REFERENCE-VALUE>
+                           <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/TS_T40D2M4I0R98/Os/OsTask/OsTaskAccessingApplication</DEFINITION-REF>
+                           <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/Os/Os/SND_APP</VALUE-REF>
+                        </ECUC-REFERENCE-VALUE>
+                        <ECUC-REFERENCE-VALUE>
+                           <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/TS_T40D2M4I0R98/Os/OsTask/OsTaskEventRef</DEFINITION-REF>
+                           <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/Os/Os/MSGAEVENT</VALUE-REF>
+                        </ECUC-REFERENCE-VALUE>
+                        <ECUC-REFERENCE-VALUE>
+                           <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/TS_T40D2M4I0R98/Os/OsTask/OsTaskEventRef</DEFINITION-REF>
+                           <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/Os/Os/TIMLIMITEVENT</VALUE-REF>
+                        </ECUC-REFERENCE-VALUE>
+                        <ECUC-REFERENCE-VALUE>
+                           <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/TS_T40D2M4I0R98/Os/OsTask/OsTaskResourceRef</DEFINITION-REF>
+                           <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/Os/Os/MSGAACCESS</VALUE-REF>
+                        </ECUC-REFERENCE-VALUE>
+                     </REFERENCE-VALUES>
+                     <SUB-CONTAINERS>
+                        <ECUC-CONTAINER-VALUE>
+                           <SHORT-NAME>OsTaskAutostart</SHORT-NAME>
+                           <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/TS_T40D2M4I0R98/Os/OsTask/OsTaskAutostart</DEFINITION-REF>
+                           <REFERENCE-VALUES>
+                              <ECUC-REFERENCE-VALUE>
+                                 <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/TS_T40D2M4I0R98/Os/OsTask/OsTaskAutostart/OsTaskAppModeRef</DEFINITION-REF>
+                                 <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/Os/Os/Mode01</VALUE-REF>
+                              </ECUC-REFERENCE-VALUE>
+                           </REFERENCE-VALUES>
+                        </ECUC-CONTAINER-VALUE>
+                     </SUB-CONTAINERS>
+                  </ECUC-CONTAINER-VALUE>
+                  <ECUC-CONTAINER-VALUE>
+                     <SHORT-NAME>TASKRCV2</SHORT-NAME>
+                     <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/TS_T40D2M4I0R98/Os/OsTask</DEFINITION-REF>
+                     <PARAMETER-VALUES>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                           <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/TS_T40D2M4I0R98/Os/OsTask/OsTaskActivation</DEFINITION-REF>
+                           <VALUE>1</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                           <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/TS_T40D2M4I0R98/Os/OsTask/OsTaskPriority</DEFINITION-REF>
+                           <VALUE>4</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                           <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T40D2M4I0R98/Os/OsTask/OsTaskSchedule</DEFINITION-REF>
+                           <VALUE>FULL</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                     </PARAMETER-VALUES>
+                     <REFERENCE-VALUES>
+                        <ECUC-REFERENCE-VALUE>
+                           <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/TS_T40D2M4I0R98/Os/OsTask/OsTaskAccessingApplication</DEFINITION-REF>
+                           <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/Os/Os/SND_APP</VALUE-REF>
+                        </ECUC-REFERENCE-VALUE>
+                        <ECUC-REFERENCE-VALUE>
+                           <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/TS_T40D2M4I0R98/Os/OsTask/OsTaskResourceRef</DEFINITION-REF>
+                           <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/Os/Os/MSGBACCESS</VALUE-REF>
+                        </ECUC-REFERENCE-VALUE>
+                     </REFERENCE-VALUES>
+                  </ECUC-CONTAINER-VALUE>
+                  <ECUC-CONTAINER-VALUE>
+                     <SHORT-NAME>TASKSTOP</SHORT-NAME>
+                     <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/TS_T40D2M4I0R98/Os/OsTask</DEFINITION-REF>
+                     <PARAMETER-VALUES>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                           <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/TS_T40D2M4I0R98/Os/OsTask/OsTaskActivation</DEFINITION-REF>
+                           <VALUE>1</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                           <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/TS_T40D2M4I0R98/Os/OsTask/OsTaskPriority</DEFINITION-REF>
+                           <VALUE>0</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                           <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T40D2M4I0R98/Os/OsTask/OsTaskSchedule</DEFINITION-REF>
+                           <VALUE>NON</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                     </PARAMETER-VALUES>
+                  </ECUC-CONTAINER-VALUE>
+               </CONTAINERS>
+            </ECUC-MODULE-CONFIGURATION-VALUES>
+         </ELEMENTS>
+      </AR-PACKAGE>
+   </AR-PACKAGES>
+</AUTOSAR>

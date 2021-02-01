@@ -1,0 +1,123 @@
+;**************************************************************************************
+;
+;  NXP(TM) and the NXP logo are trademarks of NXP
+;  All other product or service names are the property of their respective owners.
+;  (c) Copyright 2013 - 2016 Freescale Semiconductor Inc.
+;  Copyright 2017 NXP
+;  All Rights Reserved.
+;
+;  You can use this example for any purpose on any computer system with the
+;  following restrictions:
+;
+;  1. This example is provided "as is", without warranty.
+;
+;  Description:  T32 programming script
+;
+;**************************************************************************************
+
+;========================================================================
+; Start-Up Script for S32K
+;========================================================================
+; CPU setup
+
+local &elfname &load_to_fls
+entry &elfname &load_to_fls
+
+RESet
+SYStem.RESet
+WinCLEAR
+
+SYStem.Option TRST off
+SYStem.Option ResBreak off
+SYStem.Option WaitReset ON
+SYStem.CPU CortexM4F
+SYStem.CONFIG MEMORYACCESSPORT 3.
+SYStem.JtagClock 4MHz
+SYStem.up
+
+SYStem.OPTION DUALPORT ON
+SYStem.Option DisMode ACCESS
+
+
+; Disable Bootrom
+GOSUB DisableBootrom
+
+; Disable watchdog
+; code to disable watchdog is also present in compiler specific assembly code
+GOSUB DisableWatchdog
+
+;=========================================================================
+; FLASH initialization
+;=========================================================================
+IF "&load_to_fls"=="yes"
+(
+    ;========================================================================
+    ; Flash declaration
+    ;========================================================================
+
+    FLASH.RESet
+
+    ; Program / code flash
+    FLASH.Create 1. 0x00000000--0x0001FFFF 0x1000 TARGET Quad
+    FLASH.Create 1. 0x00020000--0x0003FFFF 0x1000 TARGET Quad
+
+    FLASH.TARGET 0x1FFFF000 0x20000000 0x1000 ~~/demo/arm/flash/quad/s32k.bin
+
+    FLASH.Reprogram ALL /ERASE
+    Data.Load.Elf &elfname.elf
+    FLASH.ReProgram off
+)
+ELSE
+(
+    ;=========================================================================
+    ; RAM initialization
+    ;=========================================================================
+    Data.Set EA:0x1FFFC000--0x20002FFF %long 0xDEADBEEF
+
+    ; Load code
+    Data.Load.Elf &elfname.elf 0x1FFFC000--0x20002FFF /GLOBTYPES
+)
+
+; simulate reset event
+Register.Set PC  Reset_Handler
+
+BREAK.RESET
+v.w ind taskRcv1 taskRcv2 taskStop taskSnd1 taskSnd2 taskCnt
+
+ENDDO
+
+
+DisableBootrom:
+  Data.Set SD:0x4007F010 %LE %Long 0x6
+  Data.Set SD:0x4007F014 %LE %Long 0x0
+  RETURN
+
+DisableWatchdog:
+  LOCAL &tmp1 &tmp2
+  &tmp1=Data.Long(ST:0x20000000)
+  &tmp2=Data.Long(ST:0x20000004)
+
+  ; The watchdog has a restrictive timing. It has to be configured and unlocked within a peripod
+  ; of 128 cycles. Therefor the unlock sequence need to be done by a small target program.
+
+  Data.Assemble ST:0x20000000  str  r1, [r0]   ; SD:0x40052004 = 0xD928C520   Unlock
+  Data.Assemble ,              str  r3, [r2]   ; SD:0x40052008 = 0xD928       maximum timeout value
+  Data.Assemble ,              str  r5, [r4]   ; SD:0x40052000 = 0x2120       disable Wdg
+  Data.Assemble ,              bkpt #0
+  Register.Set  PC 0x20000000
+  Register.Set  SP 0x20001000
+  Register.Set  r0 0x40052004
+  Register.Set  r1 0xD928C520
+  Register.Set  r2 0x40052008
+  Register.Set  r3 0x0000FFFF
+  Register.Set  r4 0x40052000
+  Register.Set  r5 0x00002120
+
+  Go.direct
+  WAIT !RUN()
+
+  Data.Set ST:0x20000000 %Long &tmp1
+  Data.Set ST:0x20000004 %Long &tmp2
+
+  RETURN
+

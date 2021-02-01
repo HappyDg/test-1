@@ -1,0 +1,65 @@
+GLOBAL &def_suff
+
+AREA.reset
+AREA.create Log
+AREA.view   Log
+
+
+
+GOSUB execAllTests "gh"
+
+
+PRINT "ALL BENCHMARKS HAS BEEN EXECUTED"
+
+end
+
+
+execAllTests:
+    ENTRY &compiler
+    PRINT "start execution of ALL tests for " &compiler " compiler"
+    GOSUB checkCompiler &compiler
+    GOSUB execPerfTests &compiler
+    GOSUB execMemTests  &compiler
+    PRINT "ALL tests for " &compiler " compiler has been executed"
+    return
+
+execPerfTests:
+    ENTRY &compiler
+    PRINT "start execution of PERFORMANCE tests for " &compiler " compiler"
+    GOSUB checkCompiler &compiler
+    &def_suff="_&compiler"
+    cd performance
+    DO .\perfall.cmm
+    cd ..
+    PRINT "PERFORMANCE tests for " &compiler " compiler has been executed"
+    return
+
+execMemTests:
+    ENTRY &compiler
+    PRINT "start execution of MEMORY tests for " &compiler " compiler"
+    GOSUB checkCompiler &compiler
+    &def_suff="_&compiler"
+    cd memory
+    DO .\memall.cmm
+    cd ..
+    PRINT "MEMORY tests for " &compiler " compiler has been executed"
+    return
+
+checkCompiler:
+    ENTRY &compiler
+    IF (&compiler!="gh")
+    (
+        IF (&compiler!="gc")
+        (
+            IF (&compiler!="ia")
+            (
+                PRINT %ERROR "Wrong Compiler: " &compiler
+                PRINT %ERROR "Expected one of the following: gh, gc or ia"
+                END
+            )
+        )
+    )
+
+
+    return
+

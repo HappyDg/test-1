@@ -1,0 +1,4 @@
+DO ../../../s32k.cmm sample1 no
+DATA.LIST
+SYMBOL.BROWSE.FUNCTION
+TASK.ORTI sample1.ort

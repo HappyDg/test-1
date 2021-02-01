@@ -1,0 +1,34 @@
+Performance test ecc1/sc1 (for 40.0 MHz bus clock)
+===========================================================
+Description,cycles,microseconds
+===========================================================
+Interrupt entry latency,182,4.55
+ActivateTask from ISR,74,1.85
+ISR to TASK_1,324,8.09999999999999999
+Activate to TASK_2,210,5.25
+Terminate to TASK_1,184,4.6
+Return to background,298,7.45
+SetEvent within ISR,102,2.55
+ISR to TASK_3_EVT,388,9.69999999999999999
+SetEvent TASK_3 to TASK_4,308,7.7
+Activate via alarm (ISR),330,8.25 ,including interrupt entry
+ISR to TASK_ALM,314,7.85
+SetEvent via alarm (ISR),354,8.84999999999999999 ,including interrupt entry
+ISR to TASK_ALM_EVT,384,9.59999999999999999
+<============  Schedule table  ============>
+Schedule table ISR 1 task,430,10.75 ,including interrupt entry
+Schedule table ISR 4 task,613,15.325 ,including interrupt entry
+ISR to TASK_t1,302,7.55
+ISR to TASK_t2,302,7.55
+ISR to TASK_t3,302,7.55
+ISR to TASK_t7,302,7.55
+TASK_t7  to TASK_t4,322,8.04999999999999999
+<============  Harmonic Tasks  ============>
+SecondTimerISR: 1 task,438,10.95 ,including interrupt entry
+SecondTimerISR: 1 event,462,11.55 ,including interrupt entry
+SecondTimerISR: 4 tasks,621,15.525 ,including interrupt entry
+SecondTimerISR: 4 events,717,17.925 ,including interrupt entry
+ISR to TASK_h1,382,9.54999999999999999
+TASK_h1  to TASK_h4,862,21.55
+ISR to TASK_h5,314,7.85
+TASK_h5  to TASK_h8,322,8.04999999999999999

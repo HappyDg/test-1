@@ -1,0 +1,106 @@
+;**************************************************************************************
+; 
+;  NXP(TM) and the NXP logo are trademarks of NXP. 
+;  All other product or service names are the property of their respective owners. 
+;  (c) Copyright 2013 - 2015 Freescale Semiconductor Inc.
+;  Copyright 2017 NXP
+;  All Rights Reserved.
+;
+;  You can use this example for any purpose on any computer system with the
+;  following restrictions:
+;
+;  1. This example is provided "as is", without warranty.
+;
+;  Description:  T32 programming script
+;
+;**************************************************************************************
+
+;========================================================================
+; Start-Up Script for S32K
+;========================================================================
+; CPU setup
+
+local &elfname
+entry &elfname
+
+RESet
+SYStem.RESet
+WinCLEAR
+
+SYStem.Option TRST off
+SYStem.Option ResBreak off
+SYStem.Option WaitReset ON
+SYStem.CPU S32K142
+;SYStem.CONFIG MEMORYACCESSPORT 3.
+;SYStem.JtagClock 100KHz
+SYStem.JtagClock 1MHz
+SYStem.up
+
+SYStem.OPTION DUALPORT ON
+SYStem.Option DisMode ACCESS
+
+
+; Disable Bootrom
+GOSUB DisableBootrom
+
+; Disable watchdog
+; code to disable watchdog is also present in compiler specific assembly code
+GOSUB DisableWatchdog
+
+
+;=========================================================================
+; RAM initialization
+;=========================================================================
+Data.Set EA:0x1FFFC000--0x20002FFF %long 0xEAEAEAEA
+
+
+; Load code
+Data.Load.Elf &elfname 0x1FFFC000--0x20002FFF /GLOBTYPES
+
+
+; simulate reset event
+Register.Set PC  Reset_Handler
+
+; use this for IAR
+;Register.Set R13 CSTACK$$Limit
+
+; use this for GHS and GCC
+Register.Set R13 _Stack_start
+
+ENDDO
+
+
+DisableBootrom:
+  Data.Set SD:0x4007F010 %LE %Long 0x6
+  Data.Set SD:0x4007F014 %LE %Long 0x0
+  RETURN
+
+DisableWatchdog:
+  LOCAL &tmp1 &tmp2
+  &tmp1=Data.Long(ST:0x20000000)
+  &tmp2=Data.Long(ST:0x20000004)
+
+  ; The watchdog has a restrictive timing. It has to be configured and unlocked within a peripod
+  ; of 128 cycles. Therefor the unlock sequence need to be done by a small target program.
+
+  Data.Assemble ST:0x20000000  str  r1, [r0]   ; SD:0x40052004 = 0xD928C520   Unlock
+  Data.Assemble ,              str  r3, [r2]   ; SD:0x40052008 = 0xD928       maximum timeout value
+  Data.Assemble ,              str  r5, [r4]   ; SD:0x40052000 = 0x2120       disable Wdg
+  Data.Assemble ,              bkpt #0
+  Register.Set  PC 0x20000000
+  Register.Set  SP 0x20001000
+  Register.Set  r0 0x40052004
+  Register.Set  r1 0xD928C520
+  Register.Set  r2 0x40052008
+  Register.Set  r3 0x0000FFFF
+  Register.Set  r4 0x40052000
+  Register.Set  r5 0x00002120
+
+  Go.direct
+  WAIT !RUN()
+
+  Data.Set ST:0x20000000 %Long &tmp1
+  Data.Set ST:0x20000004 %Long &tmp2
+
+  RETURN
+

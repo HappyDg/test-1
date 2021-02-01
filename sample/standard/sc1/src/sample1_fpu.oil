@@ -1,0 +1,342 @@
+/**************************************************************************************
+*
+*   NXP(TM) and the NXP logo are trademarks of NXP
+*   All other product or service names are the property of their respective owners.
+*   (c) Copyright 2012 - 2016 Freescale Semiconductor Inc.
+*   Copyright 2017 NXP
+*   All Rights Reserved.
+*
+*   You can use this example for any purpose on any computer system with the
+*   following restrictions:
+*
+*   1. This example is provided "as is", without warranty.
+*
+*   2. You don't remove this copyright notice from this example or any direct derivation
+*      thereof.
+*
+*  Description:    AUTOSAR OS sample application definitions
+*
+*  Notes:    1. This file should be processed by AUTOSAR system generator
+*
+**************************************************************************************/
+
+OIL_VERSION = "3.0";
+
+
+#include "os_s32k.oin"
+
+CPU cpu1 {
+    APPMODE Mode01{};
+
+    OS os1 {
+        TargetMCU = S32K {
+
+            SysTimer = HWCOUNTER {
+
+                COUNTER = SYSTEMTIMER;
+                ISRPRIORITY = 2;
+
+                TimerHardware = FTM0 {
+                    Freeze = FALSE;
+                    Channel = 0;
+                    GlobalFTMPrescaler = OS{
+                        Value = 2;
+                    };
+                };
+            };
+
+            SecondTimer = SWCOUNTER {
+                COUNTER = SECONDTIMER;
+                ISRPRIORITY = 4;
+
+                TimerHardware = SYSTICK {
+                    TimerModuloValue = 30000;
+                };
+
+            };
+
+        };
+
+
+        DEBUG_LEVEL = 2;
+        STATUS = EXTENDED;
+        SCALABILITYCLASS = SC1;
+        STARTUPHOOK = FALSE;
+        SHUTDOWNHOOK = FALSE;
+        PRETASKHOOK = TRUE;
+        POSTTASKHOOK = TRUE;
+        ERRORHOOK = TRUE;
+        IsrStackSize = 800;
+
+        USEGETSERVICEID = FALSE;
+        USEPARAMETERACCESS = FALSE;
+
+        ISRFLOATINGPOINT = TRUE;
+
+        STACKMONITORING = TRUE {
+            PatternSize = 4;
+            Pattern = 0xDEAD55AA;
+        };
+
+        NumberOfCores = 1;
+
+    };
+
+    APPLICATION SND_APP {
+        TRUSTED = TRUE;
+        HAS_RESTARTTASK = FALSE;
+
+        ERRORHOOK = TRUE;
+
+        STARTUPHOOK = FALSE;
+        SHUTDOWNHOOK = FALSE;
+
+        TASK = TASKCNT;
+        TASK = TASKSND1;
+        TASK = TASKSND2;
+
+        COUNTER = SECONDTIMER;
+        COUNTER = SYSTEMTIMER;
+        COUNTER = STCOUNTER;
+        SCHEDULETABLE = SCHEDTAB;
+
+        CORE = 0;
+    };
+
+
+    SCHEDULETABLE SCHEDTAB {
+        COUNTER = SYSTEMTIMER;
+        AUTOSTART = FALSE;
+        REPEATING = TRUE;
+        DURATION = 30000;
+
+        EXPIRYPOINTS = EXPIRYPOINT {
+            OFFSET = 0;
+            ACTION = TASKACTIVATION {
+                 TASK = TASKSND1;
+            };
+        };
+
+        EXPIRYPOINTS = EXPIRYPOINT {
+            OFFSET = 15000;
+            ACTION = TASKACTIVATION {
+                 TASK = TASKSND2;
+            };
+        };
+
+        EXPIRYPOINTS = EXPIRYPOINT {
+            OFFSET = 22500;
+            ACTION = TASKACTIVATION {
+                 TASK = TASKCNT;
+            };
+        };
+        ACCESSING_APPLICATION = RCV_APP; /* additional rights for 'RCV_APP' application */
+        ACCESSING_APPLICATION = TRUSTED_APP; /* additional rights for 'TRUSTED_APP' application */
+    };
+
+    TASK TASKSND1 {
+        PRIORITY = 3;
+        SCHEDULE = FULL;
+        AUTOSTART = FALSE;
+        ACTIVATION = 1;
+        RESOURCE = MSGAACCESS;
+        TIMING_PROTECTION = FALSE;
+        FLOATINGPOINT = TRUE;
+    };
+    TASK TASKSND2 {
+        PRIORITY = 2;
+        SCHEDULE = FULL;
+        AUTOSTART = FALSE;
+        ACTIVATION = 1;
+        RESOURCE = MSGBACCESS;
+        TIMING_PROTECTION = FALSE;
+        FLOATINGPOINT = TRUE;
+    };
+    TASK TASKCNT {
+        PRIORITY = 1;
+        SCHEDULE = NON;
+        AUTOSTART = FALSE;
+        ACTIVATION = 1;
+        TIMING_PROTECTION = FALSE;
+    };
+
+    APPLICATION RCV_APP {
+        TRUSTED = TRUE;
+        HAS_RESTARTTASK = TRUE {
+            RESTARTTASK = TASKRCV1;
+        };
+
+        ERRORHOOK = TRUE;
+
+        STARTUPHOOK = FALSE;
+        SHUTDOWNHOOK = FALSE;
+
+        TASK = TASKRCV1;
+        TASK = TASKRCV2;
+
+        ALARM = TIMLIMITALARM;
+
+        CORE = 0;
+    };
+
+    TASK TASKRCV1 {
+        PRIORITY = 5;
+        SCHEDULE = FULL;
+        AUTOSTART = TRUE {
+            APPMODE = Mode01;
+        };
+        ACTIVATION = 1;
+        RESOURCE = MSGAACCESS;
+        EVENT = MSGAEVENT;
+        EVENT = TIMLIMITEVENT;
+        STACKSIZE = 400;
+        TIMING_PROTECTION = FALSE;
+        ACCESSING_APPLICATION = SND_APP; /* additional rights for 'SND_APP' application */
+        FLOATINGPOINT = TRUE;
+    };
+    TASK TASKRCV2 {
+        PRIORITY = 4;
+        SCHEDULE = FULL;
+        AUTOSTART = FALSE;
+        ACTIVATION = 1;
+        RESOURCE = MSGBACCESS;
+        TIMING_PROTECTION = FALSE;
+        ACCESSING_APPLICATION = SND_APP; /* additional rights for 'SND_APP' application */
+        FLOATINGPOINT = TRUE;
+    };
+
+    APPLICATION TRUSTED_APP {
+        TRUSTED = TRUE;
+        HAS_RESTARTTASK = FALSE;
+
+        ERRORHOOK = TRUE;
+
+        STARTUPHOOK = FALSE;
+        SHUTDOWNHOOK = FALSE;
+
+        TASK = TASKSTOP;
+        ALARM = STOPALARM;
+        ISR = ISR1;
+        CORE = 0;
+    };
+
+    TASK TASKSTOP {
+        PRIORITY = 0;
+        SCHEDULE = NON;
+        AUTOSTART = FALSE;
+        ACTIVATION = 1;
+        TIMING_PROTECTION = FALSE;
+    };
+    RESOURCE MSGAACCESS {
+        RESOURCEPROPERTY = STANDARD;
+        ACCESSING_APPLICATION = SND_APP; /* additional rights for 'SND_APP' application */
+        ACCESSING_APPLICATION = RCV_APP; /* additional rights for 'RCV_APP' application */
+    };
+    RESOURCE MSGBACCESS {
+        RESOURCEPROPERTY = STANDARD;
+        ACCESSING_APPLICATION = SND_APP; /* additional rights for 'SND_APP' application */
+        ACCESSING_APPLICATION = RCV_APP; /* additional rights for 'RCV_APP' application */
+    };
+
+    EVENT MSGAEVENT { MASK = AUTO; };
+    EVENT TIMLIMITEVENT   { MASK = AUTO; };
+
+    COUNTER SYSTEMTIMER {
+        MAXALLOWEDVALUE = 0xFFFF;
+        TICKSPERBASE = 10;
+        MINCYCLE = 1;
+        TYPE = HARDWARE
+        {
+           DRIVER = OSINTERNAL;
+        };
+    };
+
+    COUNTER SECONDTIMER {
+        MAXALLOWEDVALUE = 30000;
+        TICKSPERBASE = 10;
+        MINCYCLE = 1;
+        TYPE=SOFTWARE;
+        ACCESSING_APPLICATION = RCV_APP; /* additional rights for 'RCV_APP' application */
+    };
+
+    COUNTER STCOUNTER {
+        MAXALLOWEDVALUE = 20;
+        TICKSPERBASE = 1;
+        MINCYCLE = 1;
+        TYPE=SOFTWARE;
+        ACCESSING_APPLICATION = RCV_APP; /* additional rights for 'RCV_APP' application */
+    };
+
+    ALARM STOPALARM {
+        COUNTER = STCOUNTER;
+        AUTOSTART = FALSE;
+        ACTION = ACTIVATETASK {
+            TASK = TASKSTOP;
+        };
+        ACCESSING_APPLICATION = RCV_APP; /* additional rights for 'RCV_APP' application */
+    };
+    ALARM TIMLIMITALARM {
+        COUNTER = SECONDTIMER;
+        AUTOSTART = FALSE;
+        ACTION = SETEVENT {
+            TASK = TASKRCV1;
+            EVENT = TIMLIMITEVENT;
+        };
+    };
+
+    IOC MsgA {
+        DATA_PROPERTIES = DATA_PROPERTY
+        {
+            DataTypeName = "MSGATYPE";
+            DataTypeProperty = REFERENCE;
+        };
+        BUFFER_LENGTH = 0;
+
+        RECEIVER = RCV {
+            ACTION = SETEVENT {
+                TASK = TASKRCV1;
+                EVENT = MSGAEVENT;
+            };
+            RCV_OSAPPLICATION = RCV_APP;
+        };
+
+        SENDER = SND {
+            SND_OSAPPLICATION = SND_APP;
+        };
+    };
+
+    IOC MsgB {
+        DATA_PROPERTIES = DATA_PROPERTY
+        {
+            DataTypeName = "MSGBTYPE";
+            DataTypeProperty = REFERENCE;
+        };
+        BUFFER_LENGTH = 0;
+
+        RECEIVER = RCV {
+            ACTION = ACTIVATETASK{
+            TASK = TASKRCV2;
+        };
+            RCV_OSAPPLICATION = RCV_APP;
+        };
+
+        SENDER = SND {
+            SND_OSAPPLICATION = SND_APP;
+        };
+    };
+
+    ISR ISR1
+    {
+        PRIORITY = 5;
+        CATEGORY = 2;
+
+        IrqChannel = EXTERNAL {
+
+
+
+        IrqNumber = 114;
+
+
+        };
+    };
+};

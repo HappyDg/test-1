@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: AutosarOS CodeGenerator Plug-in
+Bundle-SymbolicName: Os_TS_T40D2M4I0R98; singleton:=true
+Bundle-Version: 4.0.3
+Bundle-Vendor: NXP
+Bundle-Localization: plugin
+Bundle-ClassPath: .
+Require-Bundle: dreisoft.tresos.launcher2.plugin,
+  dreisoft.tresos.datamodel2.plugin,
+  dreisoft.tresos.lib2.plugin,
+  dreisoft.tresos.autosar2.plugin
+Eclipse-LazyStart: false
