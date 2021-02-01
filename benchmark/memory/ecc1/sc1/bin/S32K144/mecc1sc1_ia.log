@@ -1,0 +1,20 @@
+===================
+TEST : ecc1 for sc1
+===================
+sysCnt   =	1980668
+nosys    =	2000001
+Overhead =	0.96%
+-------------------
+Main stack usage         =	660
+Task1 stack usage        =	248
+Task2 stack usage        =	248
+Task3 stack usage        =	248
+Task4 stack usage        =	248
+Task5 stack usage        =	248
+Task6 stack usage        =	248
+Task7 stack usage        =	248
+Task8 stack usage        =	248
+Task9 stack usage        =	248
+Task10 stack usage       =	248
+ISR stack usage        =	48
+===================

@@ -1,0 +1,415 @@
+Host OS:	Windows 7 Service Pack 1
+ELXR: Copyright (C) 1983-2015 Green Hills Software.  All Rights Reserved.
+Release: Compiler v2015.1.4
+Build Directory: [Directory] COMP-VAL-WIN31:l:/compiler/release-branch-2015-1-comp/build/v2015.1-2015-08-26/win32-comp-ecom
+Revision: [VCInfo] http://toolsvc/branches/release-branch-70/src@539996 (built by auto-compiler)
+Revision Date: Thu Aug 27 05:24:50 2015
+
+Release Date: Thu Aug 27 08:22:00 2015
+
+
+
+
+Load Map Mon Sep 25 10:33:00 2017
+Image Summary
+
+  Section              Base      Size(hex)    Size(dec)  SecOffs
+  .vector              1fffc000  000002c0          704   00001c0
+  .startup             1fffc2c0  00000074          116   0000480
+  .systeminit          1fffc334  0000024c          588   00004f4
+  .text.startup        1fffc580  00000000            0   0000000
+  .osbegincode         1fffc580  00000000            0   0000000
+  .ostext              1fffc580  00000932         2354   0000740
+  .oshook              1fffceb2  00000000            0   0000000
+  .osrodata            1fffceb4  00000264          612   0001074
+  .syscall             1fffd118  00000000            0   0000000
+  .secinfo             1fffd118  00000000            0   0000000
+  .rodata              1fffd118  00000000            0   0000000
+  .ossrodata           1fffd118  00000000            0   0000000
+  .sapp_c32            1fffd118  00000000            0   0000000
+  .sapp_c16            1fffd118  00000000            0   0000000
+  .sapp_cU             1fffd118  00000000            0   0000000
+  .sapp_c8             1fffd118  00000000            0   0000000
+  .text                1fffd118  00000000            0   0000000
+  .appcode             1fffd118  0000041c         1052   00012d8
+  .ROM.data            1fffd534  00000000            0   0000000
+  .osendcode           1fffd534  00000000            0   0000000
+  .osstack             1fffd540  00001bc0         7104   0000000
+  .data                1ffff100  00000004            4   00016f4
+  .osdata              1ffff104  00000000            0   0000000
+  .ossdata             1ffff104  00000000            0   0000000
+  .sapp_v32_data       1ffff120  00000000            0   0000000
+  .sapp_v16_data       1ffff120  00000000            0   0000000
+  .sapp_vU_data        1ffff120  00000000            0   0000000
+  .sapp_v8_data        1ffff120  00000000            0   0000000
+  .app0_vU_data        1ffff120  00000000            0   0000000
+  .osbss               1ffff400  0000028c          652   0000000
+  .ossbss              1ffff68c  000000a8          168   0000000
+  .bss                 1ffff740  00000000            0   0000000
+  .sbss                1ffff740  00000000            0   0000000
+  .sapp_v32_bss        1ffff740  00000000            0   0000000
+  .sapp_v16_bss        1ffff740  00000000            0   0000000
+  .sapp_vU_bss         1ffff740  00000000            0   0000000
+  .sapp_v8_bss         1ffff740  00000000            0   0000000
+  .app0_vU_bss         1ffff740  00000048           72   0000000
+  .stack_main          1ffff790  00001000         4096   0001700
+  .debug_info          00000000  00007ca3        31907   0002700
+  .debug_abbrev        00000000  00001451         5201   000a3a3
+  .debug_line          00000000  00017e9e        97950   000b7f4
+  .debug_macinfo       00000000  00037fd2       229330   0023692
+  .debug_frame         00000000  00000f00         3840   005b664
+  .linfix              00000000  00000000            0   0000000
+  .gstackfix           00000000  00000000            0   0000000
+  .comment             00000000  00000235          565   005c564
+
+Load Map Mon Sep 25 10:33:00 2017
+Module Summary
+
+  Origin+Size    Section          Module
+1fffceb4+000264  .osrodata        mecc1sc1_cfg.o
+00000000+0006ff  .debug_info      mecc1sc1_cfg.o
+00000000+0000e4  .debug_abbrev    mecc1sc1_cfg.o
+00000000+000ba8  .debug_line      mecc1sc1_cfg.o
+00000000+00194c  .debug_macinfo   mecc1sc1_cfg.o
+1fffd118+00041c  .appcode         mecc1.o
+1ffff740+000048  .app0_vU_bss     mecc1.o
+000006ff+00093a  .debug_info      mecc1.o
+000000e4+00019b  .debug_abbrev    mecc1.o
+00000ba8+00160f  .debug_line      mecc1.o
+0000194c+00392f  .debug_macinfo   mecc1.o
+00000000+000210  .debug_frame     mecc1.o
+1ffff100+000004  .data            SystemInit.o
+1fffc334+00024c  .systeminit      SystemInit.o
+00001039+000488  .debug_info      SystemInit.o
+0000027f+000109  .debug_abbrev    SystemInit.o
+000021b7+000942  .debug_line      SystemInit.o
+0000527b+00103a  .debug_macinfo   SystemInit.o
+00000210+0000f0  .debug_frame     SystemInit.o
+000014c1+000170  .debug_info      Os_ioc.o
+00000388+000038  .debug_abbrev    Os_ioc.o
+00002af9+0010f7  .debug_line      Os_ioc.o
+000062b5+0026a1  .debug_macinfo   Os_ioc.o
+00001631+00017b  .debug_info      Os_schedule_table.o
+000003c0+000038  .debug_abbrev    Os_schedule_table.o
+00003bf0+0010e9  .debug_line      Os_schedule_table.o
+00008956+00262e  .debug_macinfo   Os_schedule_table.o
+1fffc580+0000d0  .ostext          Os_event.o
+000017ac+000800  .debug_info      Os_event.o
+000003f8+00019a  .debug_abbrev    Os_event.o
+00004cd9+00128a  .debug_line      Os_event.o
+0000af84+002c0e  .debug_macinfo   Os_event.o
+00000300+000108  .debug_frame     Os_event.o
+1fffc650+0000e8  .ostext          Os_counter.o
+1ffff400+000008  .osbss           Os_counter.o
+00001fac+000c2b  .debug_info      Os_counter.o
+00000592+0001b7  .debug_abbrev    Os_counter.o
+00005f63+00134a  .debug_line      Os_counter.o
+0000db92+003296  .debug_macinfo   Os_counter.o
+00000408+000180  .debug_frame     Os_counter.o
+00002bd7+000171  .debug_info      Os_orti.o
+00000749+000038  .debug_abbrev    Os_orti.o
+000072ad+001087  .debug_line      Os_orti.o
+00010e28+002650  .debug_macinfo   Os_orti.o
+1fffc738+000088  .ostext          Os_task.o
+1ffff68c+000004  .ossbss          Os_task.o
+1ffff408+000150  .osbss           Os_task.o
+00002d48+0009aa  .debug_info      Os_task.o
+00000781+0001a1  .debug_abbrev    Os_task.o
+00008334+0012d0  .debug_line      Os_task.o
+00013478+002eed  .debug_macinfo   Os_task.o
+00000588+000120  .debug_frame     Os_task.o
+000036f2+00016f  .debug_info      Os_tp.o
+00000922+000038  .debug_abbrev    Os_tp.o
+00009604+001149  .debug_line      Os_tp.o
+00016365+002761  .debug_macinfo   Os_tp.o
+1fffc7c0+0000c0  .ostext          Os_scheduler.o
+1ffff690+000008  .ossbss          Os_scheduler.o
+00003861+000779  .debug_info      Os_scheduler.o
+0000095a+000190  .debug_abbrev    Os_scheduler.o
+0000a74d+001238  .debug_line      Os_scheduler.o
+00018ac6+002c35  .debug_macinfo   Os_scheduler.o
+000006a8+0000f0  .debug_frame     Os_scheduler.o
+1fffc880+0000f8  .ostext          Os_platform_interrupt.o
+1ffff698+000084  .ossbss          Os_platform_interrupt.o
+00003fda+00053a  .debug_info      Os_platform_interrupt.o
+00000aea+00013a  .debug_abbrev    Os_platform_interrupt.o
+0000b985+0011ac  .debug_line      Os_platform_interrupt.o
+0001b6fb+0029f2  .debug_macinfo   Os_platform_interrupt.o
+00000798+0000c0  .debug_frame     Os_platform_interrupt.o
+1fffc978+000170  .ostext          Os_hw_core.o
+00004514+00066b  .debug_info      Os_hw_core.o
+00000c24+000137  .debug_abbrev    Os_hw_core.o
+0000cb31+0011fe  .debug_line      Os_hw_core.o
+0001e0ed+00266e  .debug_macinfo   Os_hw_core.o
+00000858+0001c8  .debug_frame     Os_hw_core.o
+00004b7f+000172  .debug_info      Os_error.o
+00000d5b+000038  .debug_abbrev    Os_error.o
+0000dd2f+0010b0  .debug_line      Os_error.o
+0002075b+002719  .debug_macinfo   Os_error.o
+00004cf1+000175  .debug_info      Os_resource.o
+00000d93+000038  .debug_abbrev    Os_resource.o
+0000eddf+0010dd  .debug_line      Os_resource.o
+00022e74+00276d  .debug_macinfo   Os_resource.o
+1fffcae8+0001a8  .ostext          Os_isr.o
+1ffff71c+000018  .ossbss          Os_isr.o
+1ffff558+00001c  .osbss           Os_isr.o
+00004e66+00112f  .debug_info      Os_isr.o
+00000dcb+0001b7  .debug_abbrev    Os_isr.o
+0000febc+001524  .debug_line      Os_isr.o
+000255e1+0032cb  .debug_macinfo   Os_isr.o
+00000a20+0001c8  .debug_frame     Os_isr.o
+1fffd540+001bc0  .osstack         Os_stack.o
+00005f95+0001f1  .debug_info      Os_stack.o
+00000f82+00007f  .debug_abbrev    Os_stack.o
+000113e0+0010fc  .debug_line      Os_stack.o
+000288ac+0027dd  .debug_macinfo   Os_stack.o
+1fffcc90+000194  .ostext          Os_alarm.o
+1ffff574+000118  .osbss           Os_alarm.o
+00006186+000faa  .debug_info      Os_alarm.o
+00001001+0001b0  .debug_abbrev    Os_alarm.o
+000124dc+001443  .debug_line      Os_alarm.o
+0002b089+002e58  .debug_macinfo   Os_alarm.o
+00000be8+000180  .debug_frame     Os_alarm.o
+1fffce24+000088  .ostext          Os_setup.o
+00007130+0005b5  .debug_info      Os_setup.o
+000011b1+000142  .debug_abbrev    Os_setup.o
+0001391f+0011c8  .debug_line      Os_setup.o
+0002dee1+00298e  .debug_macinfo   Os_setup.o
+00000d68+0000f0  .debug_frame     Os_setup.o
+1fffceac+000006  .ostext          Os_mem.o
+000076e5+0002d0  .debug_info      Os_mem.o
+000012f3+0000ee  .debug_abbrev    Os_mem.o
+00014ae7+00110c  .debug_line      Os_mem.o
+0003086f+0027ee  .debug_macinfo   Os_mem.o
+00000e58+0000a8  .debug_frame     Os_mem.o
+000079b5+000176  .debug_info      Os_multicore.o
+000013e1+000038  .debug_abbrev    Os_multicore.o
+00015bf3+0011a4  .debug_line      Os_multicore.o
+0003305d+002797  .debug_macinfo   Os_multicore.o
+00007b2b+000178  .debug_info      Os_application.o
+00001419+000038  .debug_abbrev    Os_application.o
+00016d97+001107  .debug_line      Os_application.o
+000357f4+0027de  .debug_macinfo   Os_application.o
+1fffc2c0+000074  .startup         startup_ghs.o
+1ffff790+001000  .stack_main      startup_ghs.o
+1fffc000+0002c0  .vector          vector_ghs.o
+00000000+000235  .comment         <Linker Version Comment>
+
+Load Map Mon Sep 25 10:33:00 2017
+Global Symbols (sorted numerically)
+
+                  00000000+000002 EnableCache
+                  00000000+000012 OSKillAlarm
+                  00000000+00003a OSTaskTerminateDispatch
+                  00000000+00008c OS_ActivateTask
+                  00000000+000080 OS_CancelAlarm
+                  00000000+000054 OS_ChainTask
+                  00000000+000012 OS_DisableAllInterrupts
+                  00000000+000058 OS_DisableInterruptSource
+                  00000000+000010 OS_EnableAllInterrupts
+                  00000000+000074 OS_EnableInterruptSource
+                  00000000+000004 OS_GetActiveApplicationMode
+                  00000000+000038 OS_GetAlarm
+                  00000000+00000e OS_GetAlarmBase
+                  00000000+00000e OS_GetCounterInfo
+                  00000000+000022 OS_GetCounterValue
+                  00000000+000054 OS_GetElapsedValue
+                  00000000+000042 OS_GetEvent
+                  00000000+000018 OS_GetISRID
+                  00000000+00000c OS_GetTaskID
+                  00000000+000062 OS_GetTaskState
+                  00000000+000070 OS_IncrementCounter
+                  00000000+000008 OS_InitCounter
+                  00000000+000020 OS_ResumeAllInterrupts
+                  00000000+000026 OS_ResumeOSInterrupts
+                  00000000+000012 OS_Schedule
+                  00000000+00002a OS_SetEvent
+                  00000000+0000a0 OS_SetRelAlarm
+                  00000000+000004 OS_ShutdownOS
+                  00000000+00001e OS_SuspendAllInterrupts
+                  00000000+00002a OS_SuspendOSInterrupts
+                  00000000+000014 OS_TerminateTask
+                  00000000+000002 SetPLL
+                  00000000+000000 __ghs_eofn_OSKillAlarm
+                  00000000+000000 __ghs_eofn_OSTaskTerminateDispatch
+                  00000000+000000 __ghs_eofn_OS_ActivateTask
+                  00000000+000000 __ghs_eofn_OS_CancelAlarm
+                  00000000+000000 __ghs_eofn_OS_ChainTask
+                  00000000+000000 __ghs_eofn_OS_DisableAllInterrupts
+                  00000000+000000 __ghs_eofn_OS_DisableInterruptSource
+                  00000000+000000 __ghs_eofn_OS_EnableAllInterrupts
+                  00000000+000000 __ghs_eofn_OS_EnableInterruptSource
+                  00000000+000000 __ghs_eofn_OS_GetActiveApplicationMode
+                  00000000+000000 __ghs_eofn_OS_GetAlarmBase
+                  00000000+000000 __ghs_eofn_OS_GetCounterInfo
+                  00000000+000000 __ghs_eofn_OS_GetElapsedValue
+                  00000000+000000 __ghs_eofn_OS_GetEvent
+                  00000000+000000 __ghs_eofn_OS_GetISRID
+                  00000000+000000 __ghs_eofn_OS_GetTaskID
+                  00000000+000000 __ghs_eofn_OS_GetTaskState
+                  00000000+000000 __ghs_eofn_OS_IncrementCounter
+                  00000000+000000 __ghs_eofn_OS_InitCounter
+                  00000000+000000 __ghs_eofn_OS_ResumeAllInterrupts
+                  00000000+000000 __ghs_eofn_OS_ResumeOSInterrupts
+                  00000000+000000 __ghs_eofn_OS_SetRelAlarm
+                  00000000+000000 __ghs_eofn_OS_ShutdownOS
+                  00000000+000000 __ghs_eofn_OS_SuspendAllInterrupts
+                  00000000+000000 __ghs_eofn_OS_SuspendOSInterrupts
+                  00000000+000000 __ghs_eofn_OS_TerminateTask
+                  00000002+000000 __ghs_log_fee_level
+ .vector          1fffc000+0002c0 VTABLE
+ .startup         1fffc2c0+00004a Reset_Handler
+ .systeminit      1fffc334+00000c NVIC_SetPriorityGrouping..D.3A.5CAutosarOS.5CREPO.5CS32K_benchmark.5CJira.5CFPU.5Crelease__oss32kv4.5Cbenchmark.5Cmemory.5Cecc1.5Csc1.5Cobj.5CSystemInit.
+ .systeminit      1fffc340+0000fe SystemInit
+ .systeminit      1fffc43e+000000 __ghs_eofn_SystemInit
+ .systeminit      1fffc440+0000c2 SetBenchmarkPLL
+ .systeminit      1fffc440+000000 __ghs_eofn_SetPLL
+ .systeminit      1fffc502+000000 __ghs_eofn_SetBenchmarkPLL
+ .ostext          1fffc580+000032 OSSetEvent
+ .ostext          1fffc5b2+000000 __ghs_eofn_OSSetEvent
+ .ostext          1fffc5bc+000044 OS_ClearEvent
+ .ostext          1fffc5bc+000000 __ghs_eofn_OS_SetEvent
+ .ostext          1fffc600+00004e OS_WaitEvent
+ .ostext          1fffc600+000000 __ghs_eofn_OS_ClearEvent
+ .ostext          1fffc64e+000000 __ghs_eofn_OS_WaitEvent
+ .ostext          1fffc650+00000a OSInitCounters
+ .ostext          1fffc65a+000070 OSISRSystemTimer
+ .ostext          1fffc65a+000000 __ghs_eofn_OSInitCounters
+ .ostext          1fffc6ca+00001c OSStopTimers
+ .ostext          1fffc6ca+000000 __ghs_eofn_OSISRSystemTimer
+ .ostext          1fffc6e6+000026 OSStartTimers
+ .ostext          1fffc6e6+000000 __ghs_eofn_OSStopTimers
+ .ostext          1fffc70c+000022 OSInitSystemTimer
+ .ostext          1fffc70c+000000 __ghs_eofn_OSStartTimers
+ .ostext          1fffc72e+000000 __ghs_eofn_OSInitSystemTimer
+ .ostext          1fffc738+000000 __ghs_eofn_OS_GetCounterValue
+ .ostext          1fffc73a+000074 OSInitTasks
+ .ostext          1fffc7ae+000000 __ghs_eofn_OSInitTasks
+ .ostext          1fffc7c0+000076 OSTaskInternalDispatch
+ .ostext          1fffc836+00003e OSTaskForceDispatch
+ .ostext          1fffc836+000000 __ghs_eofn_OSTaskInternalDispatch
+ .ostext          1fffc874+000000 __ghs_eofn_OSTaskForceDispatch
+ .ostext          1fffc880+000084 OSPlatformIntcInit
+ .ostext          1fffc880+000000 __ghs_eofn_OS_Schedule
+ .ostext          1fffc904+00004e OSPlatformIntcShutdown
+ .ostext          1fffc904+000000 __ghs_eofn_OSPlatformIntcInit
+ .ostext          1fffc952+000000 __ghs_eofn_OSPlatformIntcShutdown
+ .ostext          1fffc978+00002e OSInterruptDispatcher
+ .ostext          1fffc9a6+000026 OSPendSVException
+ .ostext          1fffc9a6+000000 __ghs_eofn_OSInterruptDispatcher
+ .ostext          1fffc9cc+00002a OSSetJmp
+ .ostext          1fffc9cc+000000 __ghs_eofn_OSPendSVException
+ .ostext          1fffc9f6+00002a OSLongJmp
+ .ostext          1fffc9f6+000000 __ghs_eofn_OSSetJmp
+ .ostext          1fffca20+000008 OSNmiException
+ .ostext          1fffca20+000000 __ghs_eofn_OSLongJmp
+ .ostext          1fffca28+000008 OSHardFaultException
+ .ostext          1fffca28+000000 __ghs_eofn_OSNmiException
+ .ostext          1fffca30+000018 OSBusFaultException
+ .ostext          1fffca30+000000 __ghs_eofn_OSHardFaultException
+ .ostext          1fffca48+000008 OSUsageFaultException
+ .ostext          1fffca48+000000 __ghs_eofn_OSBusFaultException
+ .ostext          1fffca50+000008 OSSVCallException
+ .ostext          1fffca50+000000 __ghs_eofn_OSUsageFaultException
+ .ostext          1fffca58+000006 OSDebugMonitorException
+ .ostext          1fffca58+000000 __ghs_eofn_OSSVCallException
+ .ostext          1fffca5e+000008 OSReservedException
+ .ostext          1fffca5e+000000 __ghs_eofn_OSDebugMonitorException
+ .ostext          1fffca66+000064 OSArmDeactivateIsr
+ .ostext          1fffca66+000000 __ghs_eofn_OSReservedException
+ .ostext          1fffcaca+000010 OSLoadISRSP
+ .ostext          1fffcaca+000000 __ghs_eofn_OSArmDeactivateIsr
+ .ostext          1fffcada+000000 __ghs_eofn_OSLoadISRSP
+ .ostext          1fffcaf0+000006 OSISRException
+ .ostext          1fffcaf6+00004e OSInitializeISR
+ .ostext          1fffcaf6+000000 __ghs_eofn_OSISRException
+ .ostext          1fffcb44+0000e0 OSInterruptDispatcher1
+ .ostext          1fffcb44+000000 __ghs_eofn_OSInitializeISR
+ .ostext          1fffcc24+000066 OSLeaveISR..D.3A.5CAutosarOS.5CREPO.5CS32K_benchmark.5CJira.5CFPU.5Crelease__oss32kv4.5Cbenchmark.5Cmemory.5Cecc1.5Csc1.5Cobj.5COs_isr.
+ .ostext          1fffcc24+000000 __ghs_eofn_OSInterruptDispatcher1
+ .ostext          1fffcc92+000036 OSNotifyAlarmAction
+ .ostext          1fffccc8+000052 OSCheckAlarms
+ .ostext          1fffccc8+000000 __ghs_eofn_OSNotifyAlarmAction
+ .ostext          1fffcd1a+00001e OSInsertAlarm
+ .ostext          1fffcd1a+000000 __ghs_eofn_OSCheckAlarms
+ .ostext          1fffcd38+000036 OSInitAlarms
+ .ostext          1fffcd38+000000 __ghs_eofn_OSInsertAlarm
+ .ostext          1fffcd6e+000000 __ghs_eofn_OSInitAlarms
+ .ostext          1fffcd88+00009c OS_SetAbsAlarm
+ .ostext          1fffcd88+000000 __ghs_eofn_OS_GetAlarm
+ .ostext          1fffce24+000074 StartOS
+ .ostext          1fffce24+000000 __ghs_eofn_OS_SetAbsAlarm
+ .ostext          1fffce98+000014 OSShutdownOS
+ .ostext          1fffce98+000000 __ghs_eofn_StartOS
+ .ostext          1fffceac+000006 OSExceptionError
+ .ostext          1fffceac+000000 __ghs_eofn_OSShutdownOS
+ .ostext          1fffceb2+000000 __ghs_eofn_OSExceptionError
+ .osrodata        1fffceb4+000008 OsCountersCfg
+ .osrodata        1fffcebc+000018 OsIsrCfg
+ .osrodata        1fffced4+000084 OsTaskCfgTable
+ .osrodata        1fffcf58+000146 OsIsr
+ .osrodata        1fffd0a0+000078 OsAlarmsCfg
+ .appcode         1fffd118+000014 GetUsedBytes
+ .appcode         1fffd12c+000000 __ghs_eofn_GetUsedBytes
+ .appcode         1fffd12e+000000 __ghs_eofn_EnableCache
+ .appcode         1fffd12e+00017c main
+ .appcode         1fffd2aa+000182 FuncTASKBGND
+ .appcode         1fffd2aa+000000 __ghs_eofn_main
+ .appcode         1fffd42c+000034 EndMeasurement
+ .appcode         1fffd42c+000000 __ghs_eofn_FuncTASKBGND
+ .appcode         1fffd460+000018 Count
+ .appcode         1fffd460+000000 __ghs_eofn_EndMeasurement
+ .appcode         1fffd478+000012 FuncTASK1
+ .appcode         1fffd478+000000 __ghs_eofn_Count
+ .appcode         1fffd48a+000012 FuncTASK2
+ .appcode         1fffd48a+000000 __ghs_eofn_FuncTASK1
+ .appcode         1fffd49c+000012 FuncTASK3
+ .appcode         1fffd49c+000000 __ghs_eofn_FuncTASK2
+ .appcode         1fffd4ae+000012 FuncTASK4
+ .appcode         1fffd4ae+000000 __ghs_eofn_FuncTASK3
+ .appcode         1fffd4c0+000012 FuncTASK5
+ .appcode         1fffd4c0+000000 __ghs_eofn_FuncTASK4
+ .appcode         1fffd4d2+000012 FuncTASK6
+ .appcode         1fffd4d2+000000 __ghs_eofn_FuncTASK5
+ .appcode         1fffd4e4+000012 FuncTASK7
+ .appcode         1fffd4e4+000000 __ghs_eofn_FuncTASK6
+ .appcode         1fffd4f6+000012 FuncTASK8
+ .appcode         1fffd4f6+000000 __ghs_eofn_FuncTASK7
+ .appcode         1fffd508+000012 FuncTASK9
+ .appcode         1fffd508+000000 __ghs_eofn_FuncTASK8
+ .appcode         1fffd51a+000012 FuncTASK10
+ .appcode         1fffd51a+000000 __ghs_eofn_FuncTASK9
+ .appcode         1fffd52c+000000 __ghs_eofn_FuncTASK10
+ .osstack         1fffd540+000214 OsISRStack
+ .osstack         1fffd754+0019ac OsStacks
+ .data            1ffff100+000004 SCB
+                  1ffff120+000000 _bss_start
+ .osbss           1ffff400+000008 OsCounters
+ .osbss           1ffff408+000150 OsTaskTable
+ .osbss           1ffff558+000004 OsIsrArray
+ .osbss           1ffff55c+000018 OsIsrTable
+ .osbss           1ffff574+000118 OsAlarms
+ .ossbss          1ffff68c+000004 OsRunning_
+ .ossbss          1ffff690+000004 OsSchedulerVector1_
+ .ossbss          1ffff694+000004 OS_TaskListHead_
+ .ossbss          1ffff698+000004 Os_ArmNvicNestingLevel_
+ .ossbss          1ffff69c+000080 Os_ArmSavedIRQCtx_
+ .ossbss          1ffff71c+000001 OsSuspendLevel_
+ .ossbss          1ffff71d+000001 OsSuspendLevelAll_
+ .ossbss          1ffff720+000004 OsIsrLevel_
+ .ossbss          1ffff724+000004 OsOldInterruptMask_
+ .ossbss          1ffff728+000004 OsOldMsr_
+ .ossbss          1ffff72c+000004 OsOldIntMaskAll_
+ .ossbss          1ffff730+000004 OsInitialMSR_
+ .app0_vU_bss     1ffff740+000004 iterator
+ .app0_vU_bss     1ffff744+000004 nosys
+ .app0_vU_bss     1ffff748+000004 sysCnt
+ .app0_vU_bss     1ffff74c+000004 tmpPtr
+ .app0_vU_bss     1ffff750+000004 tmpSP
+ .app0_vU_bss     1ffff754+000002 procent
+ .app0_vU_bss     1ffff758+000030 stackUsage
+                  1ffff788+000000 _bss_end
+                  1ffff790+000000 OS_MAIN_STACK_MIN
+                  1ffff790+000000 _Stack_end
+                  20000790+000000 OS_MAIN_STACK_MAX
+                  20000790+000000 _Stack_start

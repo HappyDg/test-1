@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<plugin>
+
+  <!--
+    ** \brief AUTOSAR Os_TS_T40D2M4I0R98 plugin
+    ** \project AUTOSAR Standard Core
+    ** \file plugin.xdm
+    ** (C) Freescale Semiconductor, Inc. 2007-2016
+    ** Copyright 2017 by NXP
+    ** All rights exclusively reserved for NXP,
+    ** unless expressly agreed to otherwise.
+  -->
+  <extension point="dreisoft.tresos.launcher2.plugin.module"
+             id="Os_TS_T40D2M4I0R98_ModuleId"
+             name="Os_TS_T40D2M4I0R98 Module">
+
+    <module id="Os_TS_T40D2M4I0R98"
+            label="Os"
+            mandatory="false"
+            allowMultiple="false"
+            description="Autosar OS module"
+            copyright="Copyright 2017 NXP"
+
+            swVersionMajor="4"
+            swVersionMinor="0"
+            swVersionPatch="98"
+            swVersionSuffix=""
+            
+            specVersionMajor="4"
+            specVersionMinor="0"
+            specVersionPatch="3"
+            
+            relVersionPrefix="AUTOSAR"
+            relVersionMajor="4"
+            relVersionMinor="0"
+            relVersionPatch="3"
+            relVersionSuffix="0003"
+
+            categoryType="Os"
+            categoryLayer="Os"
+            categoryCategory="Os"
+            categoryComponent="ECUC">
+      <ecuType target="ARM" derivate="S32K14X"/>
+    </module>
+    </extension>
+
+  <extension point="dreisoft.tresos.launcher2.plugin.configuration"
+             id="Os_TS_T40D2M4I0R98_ConfigId"
+             name="Os_TS_T40D2M4I0R98 Configuration">
+    <configuration moduleId="Os_TS_T40D2M4I0R98">
+      <schema>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarSchemaManager"/>
+        <resource value="config/Os.xdm" type="xdm"/>
+      </schema>
+
+      <data>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarConfigManager"/>
+        <schemaNode path="ASPath:/TS_T40D2M4I0R98/Os"/>
+      </data>
+
+      <editor id="Os_TS_T40D2M4I0R98_EditorId"
+              label="Autosar OS"
+              tooltip="Autosar OS module">
+        <class class="dreisoft.tresos.launcher2.editor.GenericConfigEditor">
+          <parameter name="schema" value="ASPath:/TS_T40D2M4I0R98/Os"/>
+          <parameter name="title" value="Autosar OS"/>
+        </class>
+      </editor>
+    </configuration>
+  </extension>
+
+ <!--
+  <extension point="dreisoft.tresos.launcher2.plugin.generator"
+    id="EPCGenerator">
+    <generator moduleId="Os_TS_T40D2M4I0R98"
+    id="Os_TS_T40D2M4I0R98GeneratorId"
+    class="dreisoft.tresos.autosar2.generator.EPCFileGenerator">
+    <parameter name="outputDir" value="output"/>
+    <parameter name="generateAllModules" value="true"/>
+    <parameter name="generateIntoOneFile" value="false"/>
+    <parameter name="contentType" value="asc:4.0.3"/>
+    </generator>
+</extension>
+ -->
+
+  <extension point="dreisoft.tresos.launcher2.plugin.generator">
+    <generator moduleId="Os_TS_T40D2M4I0R98"
+        id="Os_TS_T40D2M4I0R98GeneratorId"
+        class="dreisoft.tresos.autosar2.generator.ExternalGenerator">
+        <parameter name="outputDir" value="epc"/>
+        <parameter name="generateAllModules" value="true"/>
+        <parameter name="generateIntoOneFile" value="true"/>
+        <parameter name="contentType" value="asc:4.0.3"/>
+        <parameter name="shell" value="false"/>
+        <parameter name="cwd" value="${pluginPath}\..\..\..\..\ssc\bin"/>
+        <parameter name="commandline"
+            value="${pluginPath}\..\..\..\..\ssc\bin\generator\sg.exe  ${outputDir}\epc\project.epc"/>
+            <parameter name="evalExitCode" value="true"/>
+        <parameter name="error" value="^$merror $m"/>
+        <parameter name="warning" value="^$mwarning $m"/>
+    </generator>
+</extension>
+  <!--
+     This extension defines help files.
+  -->
+  <extension point="org.eclipse.help.toc">
+    <toc file="anchors.xml" primary="true"/>
+  </extension>
+
+</plugin>

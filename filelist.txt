@@ -1,0 +1,525 @@
+;*******************************************************************************
+; NXP AUTOSAR OS/S32K v.4.0 RTM 1.0.0
+; Build 4.0.98
+; filelist.txt
+; NXP(TM) and the NXP logo are trademarks of NXP
+; All other product or service names are the property of their respective owners.
+; Copyright 2017 NXP
+;*******************************************************************************
+
+; AUTOSAR OS user's file list
+
+.\filelist.txt             ; List of NXP AUTOSAR OS files (this file)
+.\GettingStarted.htm       ; Getting started file
+.\license.txt              ; License statement
+.\readme.txt               ; Readme
+.\Uninstall.exe            ; Uninstaller program
+
+.\redist                   ;
+.\redist\make381.exe       ; gnu make 3.81
+.\redist\cygintl-3.dll     ; cygwin intl dll
+
+.\ssc                      ; Operating system source files
+
+
+.\ssc\hwspec                                 ; Hardware-specific and compiler-specific files
+.\ssc\hwspec\gccarm                          ; GNU GCC
+.\ssc\hwspec\gccarm\startup_gcc.s            ; GNU GCC startup code
+.\ssc\hwspec\gccarm\vector_gcc.s             ; interrupt vector table for GCC
+.\ssc\hwspec\gccarm\memset.c                 ; memset function code for GCC only
+.\ssc\hwspec\gccarm\memcpy.c                 ; memcpy function code for GCC only
+.\ssc\hwspec\gccarm\strcmp.c                 ; strcmp function code for GCC only
+
+.\ssc\hwspec\ghsarm                          ; GSH
+.\ssc\hwspec\ghsarm\startup_ghs.asm          ; GHS statup code
+.\ssc\hwspec\ghsarm\vector_ghs.asm           ; interrupt vector table for GHS
+
+.\ssc\hwspec\iararm                          ; IAR
+.\ssc\hwspec\iararm\startup_iar.s            ; IAR startup code
+.\ssc\hwspec\iararm\vector_iar.s             ; Interrupt vector table for IAR
+
+.\ssc\hwspec\SystemInit.c                    ; System Initialization code
+.\ssc\hwspec\arm_cortex_m4.h                 ; CortexM4 specific code
+
+.\ssc\inc                                    ; Headers for the operating system
+.\ssc\inc\Os.h                               ; Main header for operating system
+.\ssc\inc\Os_alarm_api.h                     ; Alarms API
+.\ssc\inc\Os_alarm_config.h                  ; Alarms config header
+.\ssc\inc\Os_alarm_internal_api.h            ; Alarms internal API
+.\ssc\inc\Os_alarm_internal_types.h          ; Alarms internal types
+.\ssc\inc\Os_alarm_types.h                   ; Alarms types
+.\ssc\inc\Os_application_api.h               ; Applications API
+.\ssc\inc\Os_application_config.h            ; Applications config header
+.\ssc\inc\Os_application_internal_api.h      ; Applications internal API
+.\ssc\inc\Os_application_internal_types.h    ; Applications internal types
+.\ssc\inc\Os_application_types.h             ; Applications types
+.\ssc\inc\Os_compiler_api.h                  ; Compiler API
+.\ssc\inc\Os_compiler_internal_api.h         ; Compiler internal API
+.\ssc\inc\Os_counter_api.h                   ; Counters API
+.\ssc\inc\Os_counter_config.h                ; Counters config header
+.\ssc\inc\Os_counter_internal_api.h          ; Counters internal API
+.\ssc\inc\Os_counter_internal_types.h        ; Counters internal types
+.\ssc\inc\Os_counter_types.h                 ; Counters types
+.\ssc\inc\Os_error_api.h                     ; Error handling API
+.\ssc\inc\Os_error_internal_api.h            ; Error handling internal API
+.\ssc\inc\Os_error_internal_types.h          ; Error handling internal types
+.\ssc\inc\Os_error_types.h                   ; Error handling types
+.\ssc\inc\Os_event_api.h                     ; Event control API
+.\ssc\inc\Os_event_internal_api.h            ; Event control internal API
+.\ssc\inc\Os_hook_api.h                      ; Hook API
+.\ssc\inc\Os_hook_internal_api.h             ; Hook internal API
+.\ssc\inc\Os_hw_core.h                       ; Core specific definitions
+.\ssc\inc\Os_hw_core_compiler.h              ; Core specific compiler definitions
+.\ssc\inc\Os_hw_core_compiler_api.h          ; Core specific compiler API
+.\ssc\inc\Os_hw_ftm.h                        ; FTM definitions
+.\ssc\inc\Os_hw_intc.h                       ; INTC definitions
+.\ssc\inc\Os_hw_pit.h                        ; PIT definitions
+.\ssc\inc\Os_hw_systick.h                    ; SYSTICK definitions
+.\ssc\inc\Os_internal_api.h                  ; OS internal API
+.\ssc\inc\Os_internal_config.h               ; OS internal config header
+.\ssc\inc\Os_internal_types.h                ; OS internal types
+.\ssc\inc\Os_ioc_api.h                       ; IOC API
+.\ssc\inc\Os_ioc_config.h                    ; IOC config header
+.\ssc\inc\Os_ioc_internal_api.h              ; IOC internal API
+.\ssc\inc\Os_ioc_internal_types.h            ; IOC internal types
+.\ssc\inc\Os_isr_api.h                       ; Interrupts management API
+.\ssc\inc\Os_isr_config.h                    ; Interrupts management config header
+.\ssc\inc\Os_isr_internal_api.h              ; Interrupts management internal API
+.\ssc\inc\Os_isr_internal_types.h            ; Interrupts management internal types
+.\ssc\inc\Os_memory_api.h                    ; Memory protection API
+.\ssc\inc\Os_memory_config.h                 ; Memory protection config header
+.\ssc\inc\Os_memory_internal_api.h           ; Memory protection internal API
+.\ssc\inc\Os_memory_internal_types.h         ; Memory protection internal types
+.\ssc\inc\Os_memory_types.h                  ; Memory protection types
+.\ssc\inc\Os_multicore_api.h                 ; Multicore services API
+.\ssc\inc\Os_multicore_config.h              ; Multicore services config header
+.\ssc\inc\Os_multicore_internal_api.h        ; Multicore services internal API
+.\ssc\inc\Os_multicore_internal_types.h      ; Multicore services internal types
+.\ssc\inc\Os_multicore_types.h               ; Multicore services types
+.\ssc\inc\Os_object_api.h                    ; Object accessing API
+.\ssc\inc\Os_object_internal_api.h           ; Object accessing internal API
+.\ssc\inc\Os_orti_internal_api.h             ; ORTI internal API
+.\ssc\inc\Os_platform.h                      ; Platform specific definitions
+.\ssc\inc\Os_platform_application.h          ; Platform specific application definitions
+.\ssc\inc\Os_platform_base.h                 ; Platform specific modules bases definitions
+.\ssc\inc\Os_platform_config.h               ; Platform specific definitions
+.\ssc\inc\Os_platform_interrupt.h            ; Platform specific interrupt definitions
+.\ssc\inc\Os_platform_memory.h               ; Platform specific memory protection definitions
+.\ssc\inc\Os_platform_multicore.h            ; Platform specific multicore definitions
+.\ssc\inc\Os_platform_timers.h               ; Platform specific timers definitions
+.\ssc\inc\Os_prop_autosar.h                  ; Config definitions
+.\ssc\inc\Os_prop_autosar_api.h              ; Config definitions API
+.\ssc\inc\Os_prop_platform.h                 ; Platform config
+.\ssc\inc\Os_resource_api.h                  ; Resources API
+.\ssc\inc\Os_resource_config.h               ; Resources config header
+.\ssc\inc\Os_resource_internal_api.h         ; Resources internal API
+.\ssc\inc\Os_resource_internal_types.h       ; Resources internal types
+.\ssc\inc\Os_resource_types.h                ; Resources types
+.\ssc\inc\Os_schedule_table_api.h            ; Schedule tables API
+.\ssc\inc\Os_schedule_table_config.h         ; Schedule tables config API
+.\ssc\inc\Os_schedule_table_internal_api.h   ; Schedule tables internal API
+.\ssc\inc\Os_schedule_table_internal_types.h ; Schedule tables internal types
+.\ssc\inc\Os_schedule_table_types.h          ; Schedule tables types
+.\ssc\inc\Os_scheduler_api.h                 ; Scheduler API
+.\ssc\inc\Os_scheduler_internal_api.h        ; Scheduler internal API
+.\ssc\inc\Os_sections.h                      ; Memory mapping
+.\ssc\inc\Os_setup_api.h                     ; Start-up procedures API
+.\ssc\inc\Os_setup_internal_api.h            ; Start-up procedures internal API
+.\ssc\inc\Os_setup_internal_types.h          ; Start-up procedures internal types
+.\ssc\inc\Os_stack_api.h                     ; Stacks API
+.\ssc\inc\Os_stack_config.h                  ; Stacks config header
+.\ssc\inc\Os_stack_internal_api.h            ; Stacks procedures internal API
+.\ssc\inc\Os_task_api.h                      ; Tasks management API
+.\ssc\inc\Os_task_config.h                   ; Tasks management config header
+.\ssc\inc\Os_task_internal_api.h             ; Tasks management internal API
+.\ssc\inc\Os_task_internal_types.h           ; Tasks management internal types
+.\ssc\inc\Os_task_types.h                    ; Tasks management types
+.\ssc\inc\Os_timer_internal_api.h            ; Timers management internal API
+.\ssc\inc\Os_tp_config.h                     ; Time protection config header
+.\ssc\inc\Os_tp_internal_api.h               ; Time protection internal API
+.\ssc\inc\Os_tp_internal_types.h             ; Time protection internal types
+.\ssc\inc\Os_types_basic.h                   ; Basic types
+.\ssc\inc\Os_types_common_alm_sct.h          ; Common alarms and schedule tables types
+.\ssc\inc\Os_types_common_internal.h         ; Common internal types
+.\ssc\inc\Os_types_common_public.h           ; Common public types
+.\ssc\inc\Os_types_public.h                  ; Public types
+.\ssc\inc\Os_version.h                       ; OS current version
+
+.\ssc\mak                                    ; Integration makefiles
+.\ssc\mak\os_defs.mak                        ; AUTOSAR OS defines makefile
+.\ssc\mak\os_rules.mak                       ; AUTOSAR OS rules makefile
+
+.\ssc\other_includes                         ; stub for standard AUTOSAR header files
+.\ssc\other_includes\Std_Types.h             ; stub for standard AUTOSAR header file Std_Types.h
+.\ssc\other_includes\Rte_Os_Type.h           ; stub for standard AUTOSAR header file Rte_Os_Type.h
+
+.\ssc\src                                    ; Source code of the operating system
+.\ssc\src\Os_alarm.c                         ; Alarms
+.\ssc\src\Os_application.c                   ; Applications
+.\ssc\src\Os_counter.c                       ; Counters
+.\ssc\src\Os_error.c                         ; Errors handling
+.\ssc\src\Os_event.c                         ; Events control
+.\ssc\src\Os_hw_core.c                       ; Hardware specific low-level functions
+.\ssc\src\Os_ioc.c                           ; IOC
+.\ssc\src\Os_isr.c                           ; Interrupts management
+.\ssc\src\Os_mem.c                           ; Memory protection
+.\ssc\src\Os_multicore.c                     ; Multicore services
+.\ssc\src\Os_orti.c                          ; ORTI
+.\ssc\src\Os_platform_interrupt.c            ; Platform specific interrupt management
+.\ssc\src\Os_resource.c                      ; Resources
+.\ssc\src\Os_schedule_table.c                ; Schedule tables
+.\ssc\src\Os_scheduler.c                     ; Scheduler
+.\ssc\src\Os_setup.c                         ; Start-up procedures
+.\ssc\src\Os_stack.c                         ; Stacks procedures
+.\ssc\src\Os_task.c                          ; Tasks management
+.\ssc\src\Os_tp.c                            ; Timing protection
+.\ssc\bin                                        ; System tools
+.\ssc\bin\generator                              ; OS Configuration files
+.\ssc\bin\generator\AUTOSAR_4-0-3.xsd            ; AUTOSAR schema definition
+.\ssc\bin\generator\FREESCALE_AUTOSAR_4-0.xsd    ; Freescale AUTOSAR schema definition
+.\ssc\bin\generator\license.dat                  ; OS license file
+.\ssc\bin\generator\license_x86.dll              ; License DLL  
+.\ssc\bin\generator\license_amd64.dll            ; License DLL for 64 bit Windows
+.\ssc\bin\generator\lmgr8c.dll                   ; FLEXlm license manager
+.\ssc\bin\generator\lmgr11.dll                   ; FLEXlm license manager for 64 bit Windows
+.\ssc\bin\generator\model.properties             ; SG properties and settings
+.\ssc\bin\generator\os_s32k.oin                  ; OS implementation file
+.\ssc\bin\generator\os_s32k.x2o                  ; XML to OIL conversion table
+.\ssc\bin\generator\os_s32k.jar                  ; System Generator (SG) Java package
+.\ssc\bin\generator\sg.exe                       ; SG executable
+.\ssc\bin\generator\xml.xsd                      ; XML namespace schema definition
+.\ssc\gce_input                                  ; OS EPD files
+.\ssc\gce_input\os_s32k.epd                      ; OS Parameters Definition file; EB tresos Studio 21.0.0 b160607-0933 plugin
+.\os_ts                                                                  ; Tresos folder
+.\os_ts\eclipse                                                          ; Eclipse folder
+.\os_ts\eclipse\plugins                                                  ; Tresos plugins folder
+.\os_ts\eclipse\plugins\Os_TS_T40D2M4I0R98                               ; Configuration plug-in folder
+.\os_ts\eclipse\plugins\Os_TS_T40D2M4I0R98\autosar                       ; OS description in AUTOSAR XML format folder
+.\os_ts\eclipse\plugins\Os_TS_T40D2M4I0R98\autosar\Os.epd                ; OS description in AUTOSAR XML format 
+.\os_ts\eclipse\plugins\Os_TS_T40D2M4I0R98\config                        ; OS description in Tresos XDM format folder
+.\os_ts\eclipse\plugins\Os_TS_T40D2M4I0R98\config\Os.xdm                 ; OS description in Tresos XDM format folder
+.\os_ts\eclipse\plugins\Os_TS_T40D2M4I0R98\META-INF                      ; Eclipse plugin manifest folder
+.\os_ts\eclipse\plugins\Os_TS_T40D2M4I0R98\META-INF\MANIFEST.MF          ; Eclipse plugin manifest
+.\os_ts\eclipse\plugins\Os_TS_T40D2M4I0R98\META-INF\CRYPTOMANIFEST.MF    ; Eclipse plugin crypto manifest
+.\os_ts\eclipse\plugins\Os_TS_T40D2M4I0R98\META-INF\CRYPTOMANIFESTSIG.MF ; Eclipse plugin crypto signal manifest
+.\os_ts\eclipse\plugins\Os_TS_T40D2M4I0R98\anchors.xml                   ; Plugin help definition file
+.\os_ts\eclipse\plugins\Os_TS_T40D2M4I0R98\plugin.xml                    ; Plugin definition file
+.\os_ts\eclipse\plugins\Os_TS_T40D2M4I0R98\readme.txt                    ; Plugin readme file
+
+
+; EB tresos Studio configuration project examples for samples
+.\os_ts\eclipse\workspace                                         ; Tresos projects' folder
+.\os_ts\eclipse\workspace\os_sample_sc1                           ; OS sample sc1 project folder
+.\os_ts\eclipse\workspace\os_sample_sc1\.project                  ; Eclipse project information
+.\os_ts\eclipse\workspace\os_sample_sc1\.prefs                    ; Project preferences folder
+.\os_ts\eclipse\workspace\os_sample_sc1\.prefs\preferences.xdm    ; Project preferences
+.\os_ts\eclipse\workspace\os_sample_sc1\config                    ; Project configuration folder
+.\os_ts\eclipse\workspace\os_sample_sc1\config\Os.xdm             ; OS module configuration
+.\os_ts\eclipse\workspace\os_sample_sc1\config\SystemModel2.tdb   ; Tresos model
+
+.\os_ts\eclipse\workspace\os_sample_fpu_sc1                           ; OS sample fpu_sc1 project folder (sample for floating point attribute)
+.\os_ts\eclipse\workspace\os_sample_fpu_sc1\.project                  ; Eclipse project information
+.\os_ts\eclipse\workspace\os_sample_fpu_sc1\.prefs                    ; Project preferences folder
+.\os_ts\eclipse\workspace\os_sample_fpu_sc1\.prefs\preferences.xdm    ; Project preferences
+.\os_ts\eclipse\workspace\os_sample_fpu_sc1\config                    ; Project configuration folder
+.\os_ts\eclipse\workspace\os_sample_fpu_sc1\config\Os.xdm             ; OS module configuration
+.\os_ts\eclipse\workspace\os_sample_fpu_sc1\config\SystemModel2.tdb   ; Tresos model
+.\sample                                                ; samples
+.\sample\standard                                       ; sample common files
+
+.\sample\standard\common.mak                            ; GNU makefile with common definitions and rules
+.\sample\standard\common_rules.mak                      ; GNU makefile with common rules
+.\sample\standard\compiler_options.mak                  ; GNU makefile with compiler options
+.\sample\standard\defs.mak                              ; GNU makefile with common definitions
+.\sample\standard\makefile                              ; GNU makefile wrapper for building sample for all scalability classes
+.\sample\standard\readme.txt                            ; readme file
+.\sample\standard\s32k.cmm                              ; Lauterbach command file for s32k
+.\sample\standard\utils.mak                             ; GNU makefile with common definitions
+
+.\sample\standard\includes                              ; included files
+.\sample\standard\includes\sample_hw.h                  ; hardware specific defines
+
+.\sample\standard\sc1                                   ; sample for SC1
+.\sample\standard\sc1\makefile                          ; GNU makefile for building SC1 sample
+.\sample\standard\sc1\src                               ; SC1 sample source code files
+.\sample\standard\sc1\src\sample1.epc                   ; SC1 sample AUTOSAR XML OS configuration file
+.\sample\standard\sc1\src\sample1.oil                   ; SC1 sample AUTOSAR OS configuration file
+.\sample\standard\sc1\src\sample1_fpu.epc               ; SC1 sample AUTOSAR XML OS configuration file with FPU feature
+.\sample\standard\sc1\src\sample1_fpu.oil               ; SC1 sample AUTOSAR OS configuration file with FPU feature
+.\sample\standard\sc1\src\sample.h                      ; SC1 sample data types
+.\sample\standard\sc1\src\MemMap.h                      ; SC1 sample memory mapping
+.\sample\standard\sc1\src\samplerv1.c                   ; SC1 sample source code
+.\sample\standard\sc1\src\samplets1.c                   ; SC1 sample source code
+
+.\sample\standard\sc1\lcf                               ; linker command files
+.\sample\standard\sc1\lcf\sample1.gld                   ; The GNU GCC compiler linker command file for RAM running
+.\sample\standard\sc1\lcf\sample1.ld                    ; The GreenHills compiler linker command file for RAM running
+.\sample\standard\sc1\lcf\sample1.icf                   ; The IAR compiler linker command file for RAM running
+.\sample\standard\sc1\lcf\sample1_fls.gld               ; The GNU GCC compiler linker command file for FLASH running 
+.\sample\standard\sc1\lcf\sample1_fls.ld                ; The GreenHills compiler linker command file for FLASH running         
+.\sample\standard\sc1\lcf\sample1_fls.icf               ; The IAR compiler linker command file for FLASH running
+
+
+.\benchmark\                                                  ; benchmark root directory
+.\benchmark\all.cmm                                           ; T32 cmm to run all the benchmark
+.\benchmark\benchCOMP1_32K142.xls                             ; Compiler benchmark results for coresponding target
+.\benchmark\benchCOMP1_32K144.xls                             ; Compiler benchmark results for coresponding target
+.\benchmark\benchCOMP1_32K146.xls                             ; Compiler benchmark results for coresponding target
+.\benchmark\benchCOMP1_32K148.xls                             ; Compiler benchmark results for coresponding target
+.\benchmark\benchCOMP6_32K142.xls                             ; Compiler benchmark results for coresponding target
+.\benchmark\benchCOMP6_32K144.xls                             ; Compiler benchmark results for coresponding target
+.\benchmark\benchCOMP6_32K146.xls                             ; Compiler benchmark results for coresponding target
+.\benchmark\benchCOMP6_32K148.xls                             ; Compiler benchmark results for coresponding target
+.\benchmark\benchCOMP8_32K142.xls                             ; Compiler benchmark results for coresponding target
+.\benchmark\benchCOMP8_32K144.xls                             ; Compiler benchmark results for coresponding target
+.\benchmark\benchCOMP8_32K146.xls                             ; Compiler benchmark results for coresponding target
+.\benchmark\benchCOMP8_32K148.xls                             ; Compiler benchmark results for coresponding target
+.\benchmark\common                                            ; common benchmark files
+.\benchmark\common\MemMap.h                                   ; Memory map file
+.\benchmark\common\memory.gld                                 ; GCC Linker command file for SC1
+.\benchmark\common\memory.icf                                 ; IAR Linker command file for SC1
+.\benchmark\common\memory.ld                                  ; GreenHills Linker command file for SC1
+.\benchmark\common\options.oin                                ; OS options
+.\benchmark\common\s32k.cmm                                   ; OS options
+.\benchmark\common\tptimer.oin                                ; Lauterbach command file for the board
+.\benchmark\common.mak                                        ; TP timer options
+.\benchmark\common_rules.mak                                  ; benchmark common makefile
+.\benchmark\compiler_options.mak                              ; Compiler options makefile
+.\benchmark\defs.mak                                          ; Common variable definitions makefile
+                                                       
+.\benchmark\makefile                                          ; benchmark global makefile
+.\benchmark\memory                                            ; memory benchmark
+.\benchmark\memory\bcc1                                       ; memory benchmark for BCC1
+.\benchmark\memory\bcc1\makefile                              ; memory benchmark makefile
+.\benchmark\memory\bcc1\mbcc1.cmm                             ; Lauterbach command file to run benchmark
+.\benchmark\memory\bcc1\sc1                                   ; memory benchmark for BCC1, SC1
+.\benchmark\memory\bcc1\sc1\bin                               ; executable and MAP files
+.\benchmark\memory\bcc1\sc1\bin\S32K142                       ; output files for S32K142
+.\benchmark\memory\bcc1\sc1\bin\S32K142\mbcc1sc1_gc.elf       ; ELF file for GCC compiler
+.\benchmark\memory\bcc1\sc1\bin\S32K142\mbcc1sc1_gc.log       ; measurement log file results
+.\benchmark\memory\bcc1\sc1\bin\S32K142\mbcc1sc1_gc.map       ; MAP file for GCC compiler
+.\benchmark\memory\bcc1\sc1\bin\S32K142\mbcc1sc1_gh.elf       ; Elf file
+.\benchmark\memory\bcc1\sc1\bin\S32K142\mbcc1sc1_gh.log       ; measurement log file results
+.\benchmark\memory\bcc1\sc1\bin\S32K142\mbcc1sc1_gh.map       ; MAP file
+.\benchmark\memory\bcc1\sc1\bin\S32K142\mbcc1sc1_ia.elf       ; Elf file
+.\benchmark\memory\bcc1\sc1\bin\S32K142\mbcc1sc1_ia.log       ; measurement log file results
+.\benchmark\memory\bcc1\sc1\bin\S32K142\mbcc1sc1_ia.map       ; MAP file
+.\benchmark\memory\bcc1\sc1\bin\S32K144                       ; output files for S32K144
+.\benchmark\memory\bcc1\sc1\bin\S32K144\mbcc1sc1_gc.elf       ; Elf file
+.\benchmark\memory\bcc1\sc1\bin\S32K144\mbcc1sc1_gc.log       ; measurement log file results
+.\benchmark\memory\bcc1\sc1\bin\S32K144\mbcc1sc1_gc.map       ; MAP file
+.\benchmark\memory\bcc1\sc1\bin\S32K144\mbcc1sc1_gh.elf       ; Elf file
+.\benchmark\memory\bcc1\sc1\bin\S32K144\mbcc1sc1_gh.log       ; measurement log file results
+.\benchmark\memory\bcc1\sc1\bin\S32K144\mbcc1sc1_gh.map       ; MAP file
+.\benchmark\memory\bcc1\sc1\bin\S32K144\mbcc1sc1_ia.elf       ; Elf file
+.\benchmark\memory\bcc1\sc1\bin\S32K144\mbcc1sc1_ia.log       ; measurement log file results
+.\benchmark\memory\bcc1\sc1\bin\S32K144\mbcc1sc1_ia.map       ; MAP file
+.\benchmark\memory\bcc1\sc1\bin\S32K146                       ; output files for S32K146
+.\benchmark\memory\bcc1\sc1\bin\S32K146\mbcc1sc1_gc.elf       ; Elf file
+.\benchmark\memory\bcc1\sc1\bin\S32K146\mbcc1sc1_gc.log       ; measurement log file results
+.\benchmark\memory\bcc1\sc1\bin\S32K146\mbcc1sc1_gc.map       ; MAP file
+.\benchmark\memory\bcc1\sc1\bin\S32K146\mbcc1sc1_gh.elf       ; Elf file
+.\benchmark\memory\bcc1\sc1\bin\S32K146\mbcc1sc1_gh.log       ; measurement log file results
+.\benchmark\memory\bcc1\sc1\bin\S32K146\mbcc1sc1_gh.map       ; MAP file
+.\benchmark\memory\bcc1\sc1\bin\S32K146\mbcc1sc1_ia.elf       ; Elf file
+.\benchmark\memory\bcc1\sc1\bin\S32K146\mbcc1sc1_ia.log       ; measurement log file results
+.\benchmark\memory\bcc1\sc1\bin\S32K146\mbcc1sc1_ia.map       ; MAP file
+.\benchmark\memory\bcc1\sc1\bin\S32K148                       ; output files for S32K148
+.\benchmark\memory\bcc1\sc1\bin\S32K148\mbcc1sc1_gc.elf       ; Elf file
+.\benchmark\memory\bcc1\sc1\bin\S32K148\mbcc1sc1_gc.log       ; measurement log file results
+.\benchmark\memory\bcc1\sc1\bin\S32K148\mbcc1sc1_gc.map       ; MAP file
+.\benchmark\memory\bcc1\sc1\bin\S32K148\mbcc1sc1_gh.elf       ; Elf file
+.\benchmark\memory\bcc1\sc1\bin\S32K148\mbcc1sc1_gh.log       ; measurement log file results
+.\benchmark\memory\bcc1\sc1\bin\S32K148\mbcc1sc1_gh.map       ; MAP file
+.\benchmark\memory\bcc1\sc1\bin\S32K148\mbcc1sc1_ia.elf       ; Elf file
+.\benchmark\memory\bcc1\sc1\bin\S32K148\mbcc1sc1_ia.log       ; measurement log file results
+.\benchmark\memory\bcc1\sc1\bin\S32K148\mbcc1sc1_ia.map       ; MAP file
+.\benchmark\memory\bcc1\sc1\makefile                          ; memory benchmark makefile
+.\benchmark\memory\bcc1\sc1\mbcc1sc1.cmm                      ; Lauterbach command file to run benchmark
+.\benchmark\memory\bcc1\sc1\sources                           ; OLL file
+.\benchmark\memory\bcc1\sc1\sources\mbcc1sc1.oil              ; OLL file
+.\benchmark\memory\common                                     ; common files for memory benchmark
+.\benchmark\memory\common\log.cmm                             ; Lauterbach command file to display benchmark results
+.\benchmark\memory\common\mbcc1.c                             ; Source file for MBCC1 benchmark
+.\benchmark\memory\common\mecc1.c                             ; Source file for MECC1 benchmark
+.\benchmark\memory\common\memory.h                            ; Header file
+.\benchmark\memory\common\memory.oin                          ; AUTOSAR OS configuration file
+.\benchmark\memory\common\target.oin                          ; AUTOSAR OS configuration file
+.\benchmark\memory\common\test.cmm                            ; Lauterbach command file to load benchmark
+.\benchmark\memory\ecc1                                       ; memory benchmark for ECC1
+.\benchmark\memory\ecc1\makefile                              ; Makefile for benchmark
+.\benchmark\memory\ecc1\mecc1.cmm                             ; Lauterbach command file to run benchmark
+.\benchmark\memory\ecc1\sc1                                   ; memory benchmark for ECC1, SC1
+.\benchmark\memory\ecc1\sc1\bin                               ; executable, MAP and result files
+.\benchmark\memory\ecc1\sc1\bin\S32K142                       ; output files for S32K142
+.\benchmark\memory\ecc1\sc1\bin\S32K142\mecc1sc1_gc.elf       ; executable file
+.\benchmark\memory\ecc1\sc1\bin\S32K142\mecc1sc1_gc.log       ; measurement log file results
+.\benchmark\memory\ecc1\sc1\bin\S32K142\mecc1sc1_gc.map       ; MAP file
+.\benchmark\memory\ecc1\sc1\bin\S32K142\mecc1sc1_gh.elf       ; executable file
+.\benchmark\memory\ecc1\sc1\bin\S32K142\mecc1sc1_gh.log       ; measurement log file results
+.\benchmark\memory\ecc1\sc1\bin\S32K142\mecc1sc1_gh.map       ; MAP file
+.\benchmark\memory\ecc1\sc1\bin\S32K142\mecc1sc1_ia.elf       ; executable file
+.\benchmark\memory\ecc1\sc1\bin\S32K142\mecc1sc1_ia.log       ; measurement log file results
+.\benchmark\memory\ecc1\sc1\bin\S32K142\mecc1sc1_ia.map       ; MAP file
+.\benchmark\memory\ecc1\sc1\bin\S32K144                       ; output files for S32K144
+.\benchmark\memory\ecc1\sc1\bin\S32K144\mecc1sc1_gc.elf       ; executable file
+.\benchmark\memory\ecc1\sc1\bin\S32K144\mecc1sc1_gc.log       ; measurement log file results
+.\benchmark\memory\ecc1\sc1\bin\S32K144\mecc1sc1_gc.map       ; MAP file
+.\benchmark\memory\ecc1\sc1\bin\S32K144\mecc1sc1_gh.elf       ; executable file
+.\benchmark\memory\ecc1\sc1\bin\S32K144\mecc1sc1_gh.log       ; measurement log file results
+.\benchmark\memory\ecc1\sc1\bin\S32K144\mecc1sc1_gh.map       ; MAP file
+.\benchmark\memory\ecc1\sc1\bin\S32K144\mecc1sc1_ia.elf       ; executable file
+.\benchmark\memory\ecc1\sc1\bin\S32K144\mecc1sc1_ia.log       ; measurement log file results
+.\benchmark\memory\ecc1\sc1\bin\S32K144\mecc1sc1_ia.map       ; MAP file
+.\benchmark\memory\ecc1\sc1\bin\S32K146                       ; output files for S32K146
+.\benchmark\memory\ecc1\sc1\bin\S32K146\mecc1sc1_gc.elf       ; executable file
+.\benchmark\memory\ecc1\sc1\bin\S32K146\mecc1sc1_gc.log       ; measurement log file results
+.\benchmark\memory\ecc1\sc1\bin\S32K146\mecc1sc1_gc.map       ; MAP file
+.\benchmark\memory\ecc1\sc1\bin\S32K146\mecc1sc1_gh.elf       ; executable file
+.\benchmark\memory\ecc1\sc1\bin\S32K146\mecc1sc1_gh.log       ; measurement log file results
+.\benchmark\memory\ecc1\sc1\bin\S32K146\mecc1sc1_gh.map       ; MAP file
+.\benchmark\memory\ecc1\sc1\bin\S32K146\mecc1sc1_ia.elf       ; executable file
+.\benchmark\memory\ecc1\sc1\bin\S32K146\mecc1sc1_ia.log       ; measurement log file results
+.\benchmark\memory\ecc1\sc1\bin\S32K146\mecc1sc1_ia.map       ; MAP file
+.\benchmark\memory\ecc1\sc1\bin\S32K148                       ; output files for S32K148
+.\benchmark\memory\ecc1\sc1\bin\S32K148\mecc1sc1_gc.elf       ; executable file
+.\benchmark\memory\ecc1\sc1\bin\S32K148\mecc1sc1_gc.log       ; measurement log file results
+.\benchmark\memory\ecc1\sc1\bin\S32K148\mecc1sc1_gc.map       ; MAP file
+.\benchmark\memory\ecc1\sc1\bin\S32K148\mecc1sc1_gh.elf       ; executable file
+.\benchmark\memory\ecc1\sc1\bin\S32K148\mecc1sc1_gh.log       ; measurement log file results
+.\benchmark\memory\ecc1\sc1\bin\S32K148\mecc1sc1_gh.map       ; MAP file
+.\benchmark\memory\ecc1\sc1\bin\S32K148\mecc1sc1_ia.elf       ; executable file
+.\benchmark\memory\ecc1\sc1\bin\S32K148\mecc1sc1_ia.log       ; measurement log file results
+.\benchmark\memory\ecc1\sc1\bin\S32K148\mecc1sc1_ia.map       ; MAP file
+.\benchmark\memory\ecc1\sc1\makefile                          ; Makefile for benchmark
+.\benchmark\memory\ecc1\sc1\mecc1sc1.cmm                      ; Lauterbach command file to run benchmark
+.\benchmark\memory\ecc1\sc1\sources                           ; OLL file
+.\benchmark\memory\ecc1\sc1\sources\mecc1sc1.oil              ; OLL file
+.\benchmark\memory\makefile                                   ; Makefile for benchmark
+.\benchmark\memory\memall.cmm                                 ; Lauterbach command file to run benchmark
+.\benchmark\performance                                       ; performance benchmark
+.\benchmark\performance\bcc1                                  ; performance benchmark for BCC1
+.\benchmark\performance\bcc1\log.cmm                          ; Lauterbach command file to display benchmark results
+.\benchmark\performance\bcc1\makefile                         ; Makefile for benchmark
+.\benchmark\performance\bcc1\pbcc1.cmm                        ; Lauterbach command file to run benchmark
+.\benchmark\performance\bcc1\sc1                              ; performance benchmark for BCC1, SC1
+.\benchmark\performance\bcc1\sc1\bin                          ; executable, MAP and result files
+.\benchmark\performance\bcc1\sc1\bin\S32K142                  ; output files for S32K142
+.\benchmark\performance\bcc1\sc1\bin\S32K142\pbcc1sc1_gc.csv  ; measurement log file results
+.\benchmark\performance\bcc1\sc1\bin\S32K142\pbcc1sc1_gc.elf  ; executable file
+.\benchmark\performance\bcc1\sc1\bin\S32K142\pbcc1sc1_gc.map  ; MAP file
+.\benchmark\performance\bcc1\sc1\bin\S32K142\pbcc1sc1_gh.csv  ; measurement log file results
+.\benchmark\performance\bcc1\sc1\bin\S32K142\pbcc1sc1_gh.elf  ; executable file
+.\benchmark\performance\bcc1\sc1\bin\S32K142\pbcc1sc1_gh.map  ; MAP file
+.\benchmark\performance\bcc1\sc1\bin\S32K142\pbcc1sc1_ia.csv  ; measurement log file results
+.\benchmark\performance\bcc1\sc1\bin\S32K142\pbcc1sc1_ia.elf  ; executable file
+.\benchmark\performance\bcc1\sc1\bin\S32K142\pbcc1sc1_ia.map  ; MAP file
+.\benchmark\performance\bcc1\sc1\bin\S32K144                  ; output files for S32K144
+.\benchmark\performance\bcc1\sc1\bin\S32K144\pbcc1sc1_gc.csv  ; measurement log file results
+.\benchmark\performance\bcc1\sc1\bin\S32K144\pbcc1sc1_gc.elf  ; executable file
+.\benchmark\performance\bcc1\sc1\bin\S32K144\pbcc1sc1_gc.map  ; MAP file
+.\benchmark\performance\bcc1\sc1\bin\S32K144\pbcc1sc1_gh.csv  ; measurement log file results
+.\benchmark\performance\bcc1\sc1\bin\S32K144\pbcc1sc1_gh.elf  ; executable file
+.\benchmark\performance\bcc1\sc1\bin\S32K144\pbcc1sc1_gh.map  ; MAP file
+.\benchmark\performance\bcc1\sc1\bin\S32K144\pbcc1sc1_ia.csv  ; measurement log file results
+.\benchmark\performance\bcc1\sc1\bin\S32K144\pbcc1sc1_ia.elf  ; executable file
+.\benchmark\performance\bcc1\sc1\bin\S32K144\pbcc1sc1_ia.map  ; MAP file
+.\benchmark\performance\bcc1\sc1\bin\S32K146                  ; output files for S32K146
+.\benchmark\performance\bcc1\sc1\bin\S32K146\pbcc1sc1_gc.csv  ; measurement log file results
+.\benchmark\performance\bcc1\sc1\bin\S32K146\pbcc1sc1_gc.elf  ; executable file
+.\benchmark\performance\bcc1\sc1\bin\S32K146\pbcc1sc1_gc.map  ; MAP file
+.\benchmark\performance\bcc1\sc1\bin\S32K146\pbcc1sc1_gh.csv  ; measurement log file results
+.\benchmark\performance\bcc1\sc1\bin\S32K146\pbcc1sc1_gh.elf  ; executable file
+.\benchmark\performance\bcc1\sc1\bin\S32K146\pbcc1sc1_gh.map  ; MAP file
+.\benchmark\performance\bcc1\sc1\bin\S32K146\pbcc1sc1_ia.csv  ; measurement log file results
+.\benchmark\performance\bcc1\sc1\bin\S32K146\pbcc1sc1_ia.elf  ; executable file
+.\benchmark\performance\bcc1\sc1\bin\S32K146\pbcc1sc1_ia.map  ; MAP file
+.\benchmark\performance\bcc1\sc1\bin\S32K148                  ; output files for S32K148
+.\benchmark\performance\bcc1\sc1\bin\S32K148\pbcc1sc1_gc.csv  ; measurement log file results
+.\benchmark\performance\bcc1\sc1\bin\S32K148\pbcc1sc1_gc.elf  ; executable file
+.\benchmark\performance\bcc1\sc1\bin\S32K148\pbcc1sc1_gc.map  ; MAP file
+.\benchmark\performance\bcc1\sc1\bin\S32K148\pbcc1sc1_gh.csv  ; measurement log file results
+.\benchmark\performance\bcc1\sc1\bin\S32K148\pbcc1sc1_gh.elf  ; executable file
+.\benchmark\performance\bcc1\sc1\bin\S32K148\pbcc1sc1_gh.map  ; MAP file
+.\benchmark\performance\bcc1\sc1\bin\S32K148\pbcc1sc1_ia.csv  ; measurement log file results
+.\benchmark\performance\bcc1\sc1\bin\S32K148\pbcc1sc1_ia.elf  ; executable file
+.\benchmark\performance\bcc1\sc1\bin\S32K148\pbcc1sc1_ia.map  ; MAP file
+.\benchmark\performance\bcc1\sc1\makefile                     ; Makefile for benchmark
+.\benchmark\performance\bcc1\sc1\pbcc1sc1.cmm                 ; Lauterbach command file to run benchmark
+.\benchmark\performance\bcc1\sc1\sources                      ; OLL file
+.\benchmark\performance\bcc1\sc1\sources\pbcc1sc1.oil         ; OLL file
+.\benchmark\performance\common                                ; common files for performance benchmark
+.\benchmark\performance\common\pbcc1.c                        ; Source file for PBCC1 benchmark
+.\benchmark\performance\common\pecc1.c                        ; Source file for PECC1 benchmark
+.\benchmark\performance\common\performance.h                  ; Header file
+.\benchmark\performance\common\performance.oin                ; AUTOSAR OS configuration file
+.\benchmark\performance\common\target.oin                     ; AUTOSAR OS configuration file
+.\benchmark\performance\common\test.cmm                       ; Lauterbach command file to load benchmark
+.\benchmark\performance\ecc1                                  ; performance benchmark for ECC1
+.\benchmark\performance\ecc1\log.cmm                          ; Lauterbach command file to display benchmark results
+.\benchmark\performance\ecc1\makefile                         ; Makefile for benchmark
+.\benchmark\performance\ecc1\pecc1.cmm                        ; Lauterbach command file to run benchmark
+.\benchmark\performance\ecc1\sc1                              ; performance benchmark for SC1
+.\benchmark\performance\ecc1\sc1\bin                          ; executable, MAP and result files
+.\benchmark\performance\ecc1\sc1\bin\S32K142                  ; output files for S32K142
+.\benchmark\performance\ecc1\sc1\bin\S32K142\pecc1sc1_gc.csv  ; measurement log file results
+.\benchmark\performance\ecc1\sc1\bin\S32K142\pecc1sc1_gc.elf  ; executable file
+.\benchmark\performance\ecc1\sc1\bin\S32K142\pecc1sc1_gc.map  ; MAP file
+.\benchmark\performance\ecc1\sc1\bin\S32K142\pecc1sc1_gh.csv  ; measurement log file results
+.\benchmark\performance\ecc1\sc1\bin\S32K142\pecc1sc1_gh.elf  ; executable file
+.\benchmark\performance\ecc1\sc1\bin\S32K142\pecc1sc1_gh.map  ; MAP file
+.\benchmark\performance\ecc1\sc1\bin\S32K142\pecc1sc1_ia.csv  ; measurement log file results
+.\benchmark\performance\ecc1\sc1\bin\S32K142\pecc1sc1_ia.elf  ; executable file
+.\benchmark\performance\ecc1\sc1\bin\S32K142\pecc1sc1_ia.map  ; MAP file
+.\benchmark\performance\ecc1\sc1\bin\S32K144                  ; output files for S32K144
+.\benchmark\performance\ecc1\sc1\bin\S32K144\pecc1sc1_gc.csv  ; measurement log file results
+.\benchmark\performance\ecc1\sc1\bin\S32K144\pecc1sc1_gc.elf  ; executable file
+.\benchmark\performance\ecc1\sc1\bin\S32K144\pecc1sc1_gc.map  ; MAP file
+.\benchmark\performance\ecc1\sc1\bin\S32K144\pecc1sc1_gh.csv  ; measurement log file results
+.\benchmark\performance\ecc1\sc1\bin\S32K144\pecc1sc1_gh.elf  ; executable file
+.\benchmark\performance\ecc1\sc1\bin\S32K144\pecc1sc1_gh.map  ; MAP file
+.\benchmark\performance\ecc1\sc1\bin\S32K144\pecc1sc1_ia.csv  ; measurement log file results
+.\benchmark\performance\ecc1\sc1\bin\S32K144\pecc1sc1_ia.elf  ; executable file
+.\benchmark\performance\ecc1\sc1\bin\S32K144\pecc1sc1_ia.map  ; MAP file
+.\benchmark\performance\ecc1\sc1\bin\S32K146                  ; output files for S32K146
+.\benchmark\performance\ecc1\sc1\bin\S32K146\pecc1sc1_gc.csv  ; measurement log file results
+.\benchmark\performance\ecc1\sc1\bin\S32K146\pecc1sc1_gc.elf  ; executable file
+.\benchmark\performance\ecc1\sc1\bin\S32K146\pecc1sc1_gc.map  ; MAP file
+.\benchmark\performance\ecc1\sc1\bin\S32K146\pecc1sc1_gh.csv  ; measurement log file results
+.\benchmark\performance\ecc1\sc1\bin\S32K146\pecc1sc1_gh.elf  ; executable file
+.\benchmark\performance\ecc1\sc1\bin\S32K146\pecc1sc1_gh.map  ; MAP file
+.\benchmark\performance\ecc1\sc1\bin\S32K146\pecc1sc1_ia.csv  ; measurement log file results
+.\benchmark\performance\ecc1\sc1\bin\S32K146\pecc1sc1_ia.elf  ; executable file
+.\benchmark\performance\ecc1\sc1\bin\S32K146\pecc1sc1_ia.map  ; MAP file
+.\benchmark\performance\ecc1\sc1\bin\S32K148                  ; output files for S32K148
+.\benchmark\performance\ecc1\sc1\bin\S32K148\pecc1sc1_gc.csv  ; measurement log file results
+.\benchmark\performance\ecc1\sc1\bin\S32K148\pecc1sc1_gc.elf  ; executable file
+.\benchmark\performance\ecc1\sc1\bin\S32K148\pecc1sc1_gc.map  ; MAP file
+.\benchmark\performance\ecc1\sc1\bin\S32K148\pecc1sc1_gh.csv  ; measurement log file results
+.\benchmark\performance\ecc1\sc1\bin\S32K148\pecc1sc1_gh.elf  ; executable file
+.\benchmark\performance\ecc1\sc1\bin\S32K148\pecc1sc1_gh.map  ; MAP file
+.\benchmark\performance\ecc1\sc1\bin\S32K148\pecc1sc1_ia.csv  ; measurement log file results
+.\benchmark\performance\ecc1\sc1\bin\S32K148\pecc1sc1_ia.elf  ; executable file
+.\benchmark\performance\ecc1\sc1\bin\S32K148\pecc1sc1_ia.map  ; MAP file
+.\benchmark\performance\ecc1\sc1\makefile                     ; Makefile for benchmark
+.\benchmark\performance\ecc1\sc1\pecc1sc1.cmm                 ; Lauterbach command file to run benchmark
+.\benchmark\performance\ecc1\sc1\sources                      ; OIL-files
+.\benchmark\performance\ecc1\sc1\sources\pecc1sc1.oil         ;OLL file
+.\benchmark\performance\makefile                              ; Makefile for benchmark
+.\benchmark\performance\perfall.cmm                           ; Lauterbach command file to run benchmark
+.\benchmark\readme.txt                                        ; readme for benchmark
+.\benchmark\utils.mak                                         ; Makefile common tools
+.\doc                                                          ; User's documentation
+.\doc\AUTOSAR_OSS32K_TR.pdf                                    ; Technical Reference
+.\doc\AUTOSAR_OSS32K_UM.pdf                                    ; User's Manual
+.\doc\AUTOSAR_OSS32K_BENCHMARK_UM.pdf                          ; Benchmark User's Manual
+.\doc\memoryusage_m4_wfpu.xls                                  ; Excel file with the measurements for memory usage for fpu support configuration
+.\doc\memoryusage_m4_wofpu.xls                                 ; Excel file with the measurements for memory usage for without fpu support configuration
+.\doc\performancelatency_compiler1_m4_wfpu.xls                 ; Excel file with the system timing measurements for fpu support configuration
+.\doc\performancelatency_compiler1_m4_wofpu.xls                ; Excel file with the system timing measurements for without fpu support configuration
+.\doc\performancelatency_compiler6_m4_wfpu.xls                 ; Excel file with the system timing measurements for fpu support configuration
+.\doc\performancelatency_compiler6_m4_wofpu.xls                ; Excel file with the system timing measurements for without fpu support configuration
+.\doc\performancelatency_compiler8_m4_wfpu.xls                 ; Excel file with the system timing measurements for fpu support configuration
+.\doc\performancelatency_compiler8_m4_wofpu.xls                ; Excel file with the system timing measurements for without fpu support configuration
+.\doc\stackusage_m4_wfpu.xls                                   ; Excel file with the measurements for stack usage measurements for fpu support configuration
+.\doc\stackusage_m4_wofpu.xls                                  ; Excel file with the measurements for stack usage measurements for without fpu support configuration

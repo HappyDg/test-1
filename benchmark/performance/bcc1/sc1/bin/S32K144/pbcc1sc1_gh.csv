@@ -1,0 +1,27 @@
+Performance test bcc1/sc1 (for 40.0 MHz bus clock)
+===========================================================
+Description,cycles,microseconds
+===========================================================
+Interrupt entry latency,148,3.7
+ActivateTask from ISR,72,1.8
+ISR to TASK_1,266,6.65
+Activate to TASK_2,202,5.05
+Terminate to TASK_1,166,4.15
+Return to background,260,6.5
+Activate via alarm (ISR),270,6.75 ,including interrupt entry
+ISR to TASK_ALM,262,6.55
+<============  Schedule table  ============>
+Schedule table ISR 1 task,408,10.2 ,including interrupt entry
+Schedule table ISR 4 task,565,14.125 ,including interrupt entry
+ISR to TASK_t1,300,7.5
+ISR to TASK_t2,300,7.5
+ISR to TASK_t3,300,7.5
+ISR to TASK_t7,300,7.5
+TASK_t7  to TASK_t4,270,6.75
+<============  Harmonic Tasks  ============>
+SecondTimerISR: 1 alarm,373,9.32499999999999999 ,including interrupt entry
+SecondTimerISR: 4 alarm,541,13.525 ,including interrupt entry
+SecondTimerISR: 8 alarm,765,19.125 ,including interrupt entry
+ISR to TASK_h1,304,7.6
+TASK_h1  to TASK_h4,270,6.75
+TASK_h4  to TASK_h8,362,9.04999999999999999

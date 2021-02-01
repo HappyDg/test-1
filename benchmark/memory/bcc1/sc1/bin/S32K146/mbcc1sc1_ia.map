@@ -1,0 +1,299 @@
+###############################################################################
+#
+# IAR ELF Linker V7.50.3.10732/W32 for ARM                25/Sep/2017  10:48:47
+# Copyright 2007-2016 IAR Systems AB.
+#
+#    Output file  =  bin\mbcc1sc1_ia.elf
+#    Map file     =  bin/mbcc1sc1_ia.map
+#    Command line =  
+#        --no_wrap_diagnostics --skip_dynamic_initialization -L
+#        D:/IAR_Systems/Embedded_Workbench_7.3/arm/arm/lib --config
+#        obj\memory.icf --map bin/mbcc1sc1_ia.map obj\mbcc1sc1_cfg.o
+#        obj\mbcc1.o obj\SystemInit.o obj\Os_ioc.o obj\Os_schedule_table.o
+#        obj\Os_event.o obj\Os_counter.o obj\Os_orti.o obj\Os_task.o
+#        obj\Os_tp.o obj\Os_scheduler.o obj\Os_platform_interrupt.o
+#        obj\Os_hw_core.o obj\Os_error.o obj\Os_resource.o obj\Os_isr.o
+#        obj\Os_stack.o obj\Os_alarm.o obj\Os_setup.o obj\Os_mem.o
+#        obj\Os_multicore.o obj\Os_application.o obj\vector_iar.o
+#        obj\startup_iar.o -o bin\mbcc1sc1_ia.elf
+#
+###############################################################################
+
+*******************************************************************************
+*** RUNTIME MODEL ATTRIBUTES
+***
+
+CppFlavor       = *
+__SystemLibrary = DLib
+
+
+*******************************************************************************
+*** PLACEMENT SUMMARY
+***
+
+"A1":  place at start of [0x1fffc000-0x20002fff] { section .vector };
+"P1":  place in [from 0x1fffc000 to 0x20002fff] { ro };
+"P2":  place in [from 0x1fffc000 to 0x20002fff] { rw, block CSTACK };
+
+  Section            Kind        Address    Size  Object
+  -------            ----        -------    ----  ------
+"A1":                                      0x2c0
+  .vector            ro code  0x1fffc000   0x2c0  vector_iar.o [1]
+                            - 0x1fffc2c0   0x2c0
+
+"P1":                                     0x104c
+  .text              ro code  0x1fffc2c0   0x238  mbcc1.o [1]
+  .text              ro code  0x1fffc4f8   0x1dc  SystemInit.o [1]
+  .ostext            ro code  0x1fffc6d4    0x78  Os_setup.o [1]
+  .ostext            ro code  0x1fffc74c   0x1b4  Os_alarm.o [1]
+  .ostext            ro code  0x1fffc900    0x90  Os_task.o [1]
+  .ostext            ro code  0x1fffc990   0x164  Os_isr.o [1]
+  .ostext            ro code  0x1fffcaf4    0xd4  Os_counter.o [1]
+  .ostext            ro code  0x1fffcbc8    0xd8  Os_scheduler.o [1]
+  .ostext            ro code  0x1fffcca0   0x138  Os_platform_interrupt.o [1]
+  .ostext            ro code  0x1fffcdd8   0x164  Os_hw_core.o [1]
+  .ostext            ro code  0x1fffcf3c     0x6  Os_mem.o [1]
+  .text              ro code  0x1fffcf42     0x2  vector_table_M.o [5]
+  .rodata            const    0x1fffcf44   0x1e8  mbcc1sc1_cfg.o [1]
+  .startup           ro code  0x1fffd12c    0x78  startup_iar.o [1]
+  .intvec            ro code  0x1fffd1a4    0x40  vector_table_M.o [5]
+  .text              ro code  0x1fffd1e4    0x40  zero_init3.o [5]
+  .text              ro code  0x1fffd224    0x2c  copy_init3.o [5]
+  .text              ro code  0x1fffd250    0x28  data_init.o [5]
+  .text              ro code  0x1fffd278    0x22  fpinit_M.o [4]
+  .iar.init_table    const    0x1fffd29c    0x24  - Linker created -
+  .text              ro code  0x1fffd2c0    0x1a  cmain.o [5]
+  .text              ro code  0x1fffd2da     0x4  low_level_init.o [3]
+  .text              ro code  0x1fffd2de     0x4  exit.o [3]
+  .text              ro code  0x1fffd2e4     0xa  cexit.o [5]
+  .text              ro code  0x1fffd2f0     0xc  XXexit.o [5]
+  .text              ro code  0x1fffd2fc     0xc  cstartup_M.o [5]
+  Initializer bytes  const    0x1fffd308     0x4  <for P2-1>
+  .rodata            const    0x1fffd30c     0x0  zero_init3.o [5]
+  .rodata            const    0x1fffd30c     0x0  copy_init3.o [5]
+                            - 0x1fffd30c  0x104c
+
+"P2", part 1 of 3:                           0x4
+  P2-1                        0x1fffd30c     0x4  <Init block>
+    .data            inited   0x1fffd30c     0x4  SystemInit.o [1]
+                            - 0x1fffd310     0x4
+
+"P2", part 2 of 3:                        0x1000
+  CSTACK                      0x1fffd310  0x1000  <Block>
+    CSTACK           uninit   0x1fffd310  0x1000  <Block tail>
+                            - 0x1fffe310  0x1000
+
+"P2", part 3 of 3:                         0x270
+  .bss               zero     0x1fffe310    0xc8  Os_alarm.o [1]
+  .bss               zero     0x1fffe3d8    0xc4  Os_task.o [1]
+  .bss               zero     0x1fffe49c    0x84  Os_platform_interrupt.o [1]
+  .bss               zero     0x1fffe520    0x28  Os_isr.o [1]
+  .bss               zero     0x1fffe548    0x10  mbcc1.o [1]
+  .bss               zero     0x1fffe558     0xc  mbcc1.o [1]
+  .bss               zero     0x1fffe564     0x8  Os_counter.o [1]
+  .bss               zero     0x1fffe56c     0x8  Os_scheduler.o [1]
+  .bss               zero     0x1fffe574     0x8  Os_isr.o [1]
+  .bss               zero     0x1fffe57c     0x4  Os_isr.o [1]
+                            - 0x1fffe580   0x270
+
+
+*******************************************************************************
+*** INIT TABLE
+***
+
+          Address     Size
+          -------     ----
+Zero (__iar_zero_init3)
+    1 destination range, total size 0x270:
+          0x1fffe310  0x270
+
+Copy (__iar_copy_init3)
+    1 source range, total size 0x4:
+          0x1fffd308    0x4
+    1 destination range, total size 0x4:
+          0x1fffd30c    0x4
+
+
+
+*******************************************************************************
+*** MODULE SUMMARY
+***
+
+    Module                   ro code  ro data  rw data
+    ------                   -------  -------  -------
+D:\AutosarOS\REPO\S32K_benchmark\Jira\FPU\release__oss32kv4\benchmark\memory\bcc1\sc1\obj: [1]
+    Os_alarm.o                   436               200
+    Os_counter.o                 212                 8
+    Os_hw_core.o                 356
+    Os_isr.o                     356                52
+    Os_mem.o                       6
+    Os_platform_interrupt.o      312               132
+    Os_scheduler.o               216                 8
+    Os_setup.o                   120
+    Os_task.o                    144               196
+    SystemInit.o                 476        4        4
+    mbcc1.o                      568                28
+    mbcc1sc1_cfg.o                        488
+    startup_iar.o                120
+    vector_iar.o                 704
+    --------------------------------------------------
+    Total:                     4 026      492      628
+
+command line: [2]
+    --------------------------------------------------
+    Total:
+
+dl7M_tln.a: [3]
+    exit.o                         4
+    low_level_init.o               4
+    --------------------------------------------------
+    Total:                         8
+
+m7M_tls.a: [4]
+    fpinit_M.o                    34
+    --------------------------------------------------
+    Total:                        34
+
+rt7M_tl.a: [5]
+    XXexit.o                      12
+    cexit.o                       10
+    cmain.o                       26
+    copy_init3.o                  44
+    cstartup_M.o                  12
+    data_init.o                   40
+    vector_table_M.o              66
+    zero_init3.o                  64
+    --------------------------------------------------
+    Total:                       274
+
+    Gaps                           4        2
+    Linker created                         36    4 096
+------------------------------------------------------
+    Grand Total:               4 346      530    4 724
+
+
+*******************************************************************************
+*** ENTRY LIST
+***
+
+Entry                      Address   Size  Type      Object
+-----                      -------   ----  ----      ------
+.iar.init_table$$Base   0x1fffd29c          --   Gb  - Linker created -
+.iar.init_table$$Limit  0x1fffd2c0          --   Gb  - Linker created -
+?main                   0x1fffd2c1         Code  Gb  cmain.o [5]
+CSTACK$$Base            0x1fffd310         Data  Gb  - Linker created -
+CSTACK$$Limit           0x1fffe310         Data  Gb  - Linker created -
+EndMeasurement          0x1fffc4ad    0x4  Code  Gb  mbcc1.o [1]
+FuncTASK1               0x1fffc4d1    0x4  Code  Gb  mbcc1.o [1]
+FuncTASK10              0x1fffc4f5    0x4  Code  Gb  mbcc1.o [1]
+FuncTASK2               0x1fffc4d5    0x4  Code  Gb  mbcc1.o [1]
+FuncTASK3               0x1fffc4d9    0x4  Code  Gb  mbcc1.o [1]
+FuncTASK4               0x1fffc4dd    0x4  Code  Gb  mbcc1.o [1]
+FuncTASK5               0x1fffc4e1    0x4  Code  Gb  mbcc1.o [1]
+FuncTASK6               0x1fffc4e5    0x4  Code  Gb  mbcc1.o [1]
+FuncTASK7               0x1fffc4e9    0x4  Code  Gb  mbcc1.o [1]
+FuncTASK8               0x1fffc4ed    0x4  Code  Gb  mbcc1.o [1]
+FuncTASK9               0x1fffc4f1    0x4  Code  Gb  mbcc1.o [1]
+FuncTASKBGND            0x1fffc345  0x168  Code  Gb  mbcc1.o [1]
+MAIN_STACK$$Limit       0x00000000          --   Gb  - Linker created -
+OSArmDeactivateIsr      0x1fffcee1   0x5c  Code  Gb  Os_hw_core.o [1]
+OSBusFaultException     0x1fffce9b   0x16  Code  Gb  Os_hw_core.o [1]
+OSCheckAlarms           0x1fffc74d   0x96  Code  Gb  Os_alarm.o [1]
+OSDebugMonitorException
+                        0x1fffced1    0x6  Code  Gb  Os_hw_core.o [1]
+OSExceptionError        0x1fffcf3d    0x6  Code  Gb  Os_mem.o [1]
+OSHardFaultException    0x1fffce93    0x8  Code  Gb  Os_hw_core.o [1]
+OSISRException          0x1fffc991    0x6  Code  Gb  Os_isr.o [1]
+OSISRSystemTimer        0x1fffcb01   0x4e  Code  Gb  Os_counter.o [1]
+OSInitAlarms            0x1fffc80d   0x52  Code  Gb  Os_alarm.o [1]
+OSInitCounters          0x1fffcaf5    0xa  Code  Gb  Os_counter.o [1]
+OSInitSystemTimer       0x1fffcb91   0x22  Code  Gb  Os_counter.o [1]
+OSInitTasks             0x1fffc919   0x68  Code  Gb  Os_task.o [1]
+OSInitializeISR         0x1fffc999   0x40  Code  Gb  Os_isr.o [1]
+OSInsertAlarm           0x1fffc7e3   0x2a  Code  Gb  Os_alarm.o [1]
+OSInterruptDispatcher   0x1fffcdd9   0x34  Code  Gb  Os_hw_core.o [1]
+OSInterruptDispatcher1  0x1fffc9d9   0xa2  Code  Gb  Os_isr.o [1]
+OSLeaveISR              0x1fffca7d   0x4e  Code  Lc  Os_isr.o [1]
+OSLongJmp               0x1fffce61   0x2a  Code  Gb  Os_hw_core.o [1]
+OSNmiException          0x1fffce8b    0x8  Code  Gb  Os_hw_core.o [1]
+OSPendSVException       0x1fffce0d   0x26  Code  Gb  Os_hw_core.o [1]
+OSPlatformIntcInit      0x1fffcca1   0xc6  Code  Gb  Os_platform_interrupt.o [1]
+OSPlatformIntcShutdown  0x1fffcd69   0x50  Code  Gb  Os_platform_interrupt.o [1]
+OSReservedException     0x1fffced7    0x8  Code  Gb  Os_hw_core.o [1]
+OSSVCallException       0x1fffcec9    0x8  Code  Gb  Os_hw_core.o [1]
+OSSetJmp                0x1fffce35   0x2a  Code  Gb  Os_hw_core.o [1]
+OSShutdownOS            0x1fffc739   0x14  Code  Gb  Os_setup.o [1]
+OSStartTimers           0x1fffcb6b   0x26  Code  Gb  Os_counter.o [1]
+OSStopTimers            0x1fffcb4f   0x1c  Code  Gb  Os_counter.o [1]
+OSTaskForceDispatch     0x1fffcc19   0x38  Code  Gb  Os_scheduler.o [1]
+OSTaskInternalDispatch  0x1fffcbc9   0x50  Code  Gb  Os_scheduler.o [1]
+OSTaskTerminateDispatch
+                        0x1fffcc51   0x44  Code  Gb  Os_scheduler.o [1]
+OSUsageFaultException   0x1fffcec1    0x8  Code  Gb  Os_hw_core.o [1]
+OS_SetAbsAlarm          0x1fffc861   0x7e  Code  Gb  Os_alarm.o [1]
+OS_TaskListHead_        0x1fffe570    0x4  Data  Gb  Os_scheduler.o [1]
+OS_TerminateTask        0x1fffc901   0x18  Code  Gb  Os_task.o [1]
+OsAlarms                0x1fffe310   0xc8  Data  Gb  Os_alarm.o [1]
+OsAlarmsCfg             0x1fffd0fc   0x28  Data  Gb  mbcc1sc1_cfg.o [1]
+OsCounters              0x1fffe564    0x8  Data  Gb  Os_counter.o [1]
+OsCountersCfg           0x1fffd124    0x8  Data  Gb  mbcc1sc1_cfg.o [1]
+OsInitialMSR_           0x1fffe57c    0x4  Data  Gb  Os_isr.o [1]
+OsIsr                   0x1fffcfb4  0x148  Data  Gb  mbcc1sc1_cfg.o [1]
+OsIsrArray              0x1fffe53c    0x4  Data  Gb  Os_isr.o [1]
+OsIsrCfg                0x1fffcf9c   0x18  Data  Gb  mbcc1sc1_cfg.o [1]
+OsIsrLevel_             0x1fffe544    0x4  Data  Gb  Os_isr.o [1]
+OsIsrTable              0x1fffe520   0x18  Data  Gb  Os_isr.o [1]
+OsOldIntMaskAll_        0x1fffe578    0x4  Data  Gb  Os_isr.o [1]
+OsOldInterruptMask_     0x1fffe540    0x4  Data  Gb  Os_isr.o [1]
+OsRunning_              0x1fffe498    0x4  Data  Gb  Os_task.o [1]
+OsSchedulerVector1_     0x1fffe56c    0x4  Data  Gb  Os_scheduler.o [1]
+OsSuspendLevelAll_      0x1fffe574    0x1  Data  Gb  Os_isr.o [1]
+OsSuspendLevel_         0x1fffe538    0x1  Data  Gb  Os_isr.o [1]
+OsTaskCfgTable          0x1fffcf44   0x58  Data  Gb  mbcc1sc1_cfg.o [1]
+OsTaskTable             0x1fffe3d8   0xc0  Data  Gb  Os_task.o [1]
+Os_ArmNvicNestingLevel_
+                        0x1fffe51c    0x4  Data  Gb  Os_platform_interrupt.o [1]
+Os_ArmSavedIRQCtx_      0x1fffe49c   0x80  Data  Gb  Os_platform_interrupt.o [1]
+Region$$Table$$Base     0x1fffd29c          --   Gb  - Linker created -
+Region$$Table$$Limit    0x1fffd2c0          --   Gb  - Linker created -
+Reset_Handler           0x1fffd12d         Code  Gb  startup_iar.o [1]
+SCB                     0x1fffd30c    0x4  Data  Gb  SystemInit.o [1]
+SetBenchmarkPLL         0x1fffc5d9   0xd8  Code  Gb  SystemInit.o [1]
+StartOS                 0x1fffc6d5   0x58  Code  Gb  Os_setup.o [1]
+SystemInit              0x1fffc4f9   0xe0  Code  Gb  SystemInit.o [1]
+VTABLE                  0x1fffc000         Data  Gb  vector_iar.o [1]
+__cmain                 0x1fffd2c1         Code  Gb  cmain.o [5]
+__exit                  0x1fffd2f1         Code  Gb  XXexit.o [5]
+__iar_copy_init3        0x1fffd225   0x2c  Code  Gb  copy_init3.o [5]
+__iar_data_init3        0x1fffd251   0x28  Code  Gb  data_init.o [5]
+__iar_init_vfp          0x1fffd279         Code  Gb  fpinit_M.o [4]
+__iar_program_start     0x1fffd2fd         Code  Gb  cstartup_M.o [5]
+__iar_zero_init3        0x1fffd1e5   0x40  Code  Gb  zero_init3.o [5]
+__low_level_init        0x1fffd2db    0x4  Code  Gb  low_level_init.o [3]
+__vector_table          0x1fffd1a4         Data  Gb  vector_table_M.o [5]
+_call_main              0x1fffd2cd         Code  Gb  cmain.o [5]
+_exit                   0x1fffd2e5         Code  Gb  cexit.o [5]
+_main                   0x1fffd2d7         Code  Gb  cmain.o [5]
+exit                    0x1fffd2df    0x4  Code  Gb  exit.o [3]
+iterator                0x1fffe560    0x4  Data  Gb  mbcc1.o [1]
+main                    0x1fffc2c1   0x84  Code  Gb  mbcc1.o [1]
+nosys                   0x1fffe550    0x4  Data  Gb  mbcc1.o [1]
+procent                 0x1fffe548    0x2  Data  Gb  mbcc1.o [1]
+stackUsage              0x1fffe554    0x4  Data  Gb  mbcc1.o [1]
+sysCnt                  0x1fffe54c    0x4  Data  Gb  mbcc1.o [1]
+tmpPtr                  0x1fffe55c    0x4  Data  Gb  mbcc1.o [1]
+tmpSP                   0x1fffe558    0x4  Data  Gb  mbcc1.o [1]
+
+
+[1] = D:\AutosarOS\REPO\S32K_benchmark\Jira\FPU\release__oss32kv4\benchmark\memory\bcc1\sc1\obj
+[2] = command line
+[3] = dl7M_tln.a
+[4] = m7M_tls.a
+[5] = rt7M_tl.a
+
+  4 346 bytes of readonly  code memory
+    530 bytes of readonly  data memory
+  4 724 bytes of readwrite data memory
+
+Errors: none
+Warnings: none

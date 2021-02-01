@@ -1,0 +1,17 @@
+#S32K14 Autosar 4.0 OS (QM) Evaluation License - SW32K14-OS401-RTM-1.0.0
+#b4.0.98 for Bui Thanh Tung Software Account
+# License for ANY
+INCREMENT AUTOSAROS_ORTI metrowks 2.0 30-apr-2021 uncounted \
+	354F9DF5DA47 VENDOR_STRING="SW32K14-OS401-RTM-1.0.0 b4.0.98" \
+	HOSTID=ANY ISSUER="Freescale Semiconductor" ISSUED=31-jan-2021 \
+	ck=129 SN="FSL - 33350537"
+# License for ANY
+INCREMENT AUTOSAROS_SG_S32K metrowks 4.0 30-apr-2021 uncounted \
+	785C0648AF54 VENDOR_STRING="SW32K14-OS401-RTM-1.0.0 b4.0.98" \
+	HOSTID=ANY ISSUER="Freescale Semiconductor" ISSUED=31-jan-2021 \
+	ck=146 SN="FSL - 33350537"
+# License for ANY
+INCREMENT AUTOSAROS_SOURCES_S32K metrowks 4.0 30-apr-2021 uncounted \
+	33CDF96DF17C VENDOR_STRING="SW32K14-OS401-RTM-1.0.0 b4.0.98" \
+	HOSTID=ANY ISSUER="Freescale Semiconductor" ISSUED=31-jan-2021 \
+	ck=149 SN="FSL - 33350537"
